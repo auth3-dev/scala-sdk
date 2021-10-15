@@ -1,4 +1,4 @@
-# Auth3 Scala SDK
+# Auth3 Admin SDK
 
 The official [Auth3](https://auth3.dev/?utm_source=github&utm_medium=sdk&utm_campaign=scala) scala SDK library.
 
@@ -8,9 +8,13 @@ Check-out the API documentation at [https://docs.auth3.dev/apis/identity-platfor
 
 ## Install
 
-Please, refer to sub-folders' documentation to selectively pick only parts of the SDK you are interested in.
+### Scala SBT
 
-We also have a [Java SDK](https://github.com/auth3-dev/java-sdk) for java projects.
+```python
+libraryDependencies += "dev.auth3.identity" % "admin-sdk" % "1.0.0"
+```
+
+Please, note that the compiled artifact is deployed on Central using the [Java SDK](https://github.com/auth3-dev/java-sdk). Check-out the [Admin SDK](https://github.com/auth3-dev/java-sdk/tree/main/admin-sdk#scala-sbt) for updated SBT instructions.
 
 ## Build
 
@@ -22,7 +26,7 @@ sbt compile
 
 ## Additional help
 
-You can find further help, examples, tools and suggestions [here](https://grpc.io/docs/languages/java/).
+You can find further help, examples, tools and suggestions [here](https://scalapb.github.io/docs/grpc/).
 
 ## Change Language
 
@@ -51,4 +55,4 @@ Customers of the Auth3 Identity Platform can access support through the official
 
 ## License
 
-Read the [LICENSE](./LICENSE).
+Read the [LICENSE](../LICENSE).
