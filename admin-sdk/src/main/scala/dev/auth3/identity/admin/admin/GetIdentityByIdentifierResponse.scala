@@ -6,18 +6,18 @@
 package dev.auth3.identity.admin.admin
 
 @SerialVersionUID(0L)
-final case class GetIdentitiesByAttributeResponse(
-    identities: _root_.scala.Seq[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity] = _root_.scala.Seq.empty,
+final case class GetIdentityByIdentifierResponse(
+    identity: _root_.scala.Option[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity] = _root_.scala.None,
     unknownFields: _root_.scalapb.UnknownFieldSet = _root_.scalapb.UnknownFieldSet.empty
-    ) extends scalapb.GeneratedMessage with scalapb.lenses.Updatable[GetIdentitiesByAttributeResponse] {
+    ) extends scalapb.GeneratedMessage with scalapb.lenses.Updatable[GetIdentityByIdentifierResponse] {
     @transient
     private[this] var __serializedSizeMemoized: _root_.scala.Int = 0
     private[this] def __computeSerializedSize(): _root_.scala.Int = {
       var __size = 0
-      identities.foreach { __item =>
-        val __value = __item
+      if (identity.isDefined) {
+        val __value = identity.get
         __size += 1 + _root_.com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(__value.serializedSize) + __value.serializedSize
-      }
+      };
       __size += unknownFields.serializedSize
       __size
     }
@@ -31,7 +31,7 @@ final case class GetIdentitiesByAttributeResponse(
       
     }
     def writeTo(`_output__`: _root_.com.google.protobuf.CodedOutputStream): _root_.scala.Unit = {
-      identities.foreach { __v =>
+      identity.foreach { __v =>
         val __m = __v
         _output__.writeTag(1, 2)
         _output__.writeUInt32NoTag(__m.serializedSize)
@@ -39,32 +39,31 @@ final case class GetIdentitiesByAttributeResponse(
       };
       unknownFields.writeTo(_output__)
     }
-    def clearIdentities = copy(identities = _root_.scala.Seq.empty)
-    def addIdentities(__vs: dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity *): GetIdentitiesByAttributeResponse = addAllIdentities(__vs)
-    def addAllIdentities(__vs: Iterable[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity]): GetIdentitiesByAttributeResponse = copy(identities = identities ++ __vs)
-    def withIdentities(__v: _root_.scala.Seq[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity]): GetIdentitiesByAttributeResponse = copy(identities = __v)
+    def getIdentity: dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity = identity.getOrElse(dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.defaultInstance)
+    def clearIdentity: GetIdentityByIdentifierResponse = copy(identity = _root_.scala.None)
+    def withIdentity(__v: dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity): GetIdentityByIdentifierResponse = copy(identity = Option(__v))
     def withUnknownFields(__v: _root_.scalapb.UnknownFieldSet) = copy(unknownFields = __v)
     def discardUnknownFields = copy(unknownFields = _root_.scalapb.UnknownFieldSet.empty)
     def getFieldByNumber(__fieldNumber: _root_.scala.Int): _root_.scala.Any = {
       (__fieldNumber: @_root_.scala.unchecked) match {
-        case 1 => identities
+        case 1 => identity.orNull
       }
     }
     def getField(__field: _root_.scalapb.descriptors.FieldDescriptor): _root_.scalapb.descriptors.PValue = {
       _root_.scala.Predef.require(__field.containingMessage eq companion.scalaDescriptor)
       (__field.number: @_root_.scala.unchecked) match {
-        case 1 => _root_.scalapb.descriptors.PRepeated(identities.iterator.map(_.toPMessage).toVector)
+        case 1 => identity.map(_.toPMessage).getOrElse(_root_.scalapb.descriptors.PEmpty)
       }
     }
     def toProtoString: _root_.scala.Predef.String = _root_.scalapb.TextFormat.printToUnicodeString(this)
-    def companion: dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.type = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse
-    // @@protoc_insertion_point(GeneratedMessage[depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse])
+    def companion: dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.type = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse
+    // @@protoc_insertion_point(GeneratedMessage[depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse])
 }
 
-object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse] {
-  implicit def messageCompanion: scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse] = this
-  def parseFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse = {
-    val __identities: _root_.scala.collection.immutable.VectorBuilder[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity] = new _root_.scala.collection.immutable.VectorBuilder[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity]
+object GetIdentityByIdentifierResponse extends scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse] {
+  implicit def messageCompanion: scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse] = this
+  def parseFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse = {
+    var __identity: _root_.scala.Option[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity] = _root_.scala.None
     var `_unknownFields__`: _root_.scalapb.UnknownFieldSet.Builder = null
     var _done__ = false
     while (!_done__) {
@@ -72,7 +71,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
       _tag__ match {
         case 0 => _done__ = true
         case 10 =>
-          __identities += _root_.scalapb.LiteParser.readMessage[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity](_input__)
+          __identity = Option(__identity.fold(_root_.scalapb.LiteParser.readMessage[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity](_input__))(_root_.scalapb.LiteParser.readMessage(_input__, _)))
         case tag =>
           if (_unknownFields__ == null) {
             _unknownFields__ = new _root_.scalapb.UnknownFieldSet.Builder()
@@ -80,35 +79,35 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
           _unknownFields__.parseField(tag, _input__)
       }
     }
-    dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse(
-        identities = __identities.result(),
+    dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse(
+        identity = __identity,
         unknownFields = if (_unknownFields__ == null) _root_.scalapb.UnknownFieldSet.empty else _unknownFields__.result()
     )
   }
-  implicit def messageReads: _root_.scalapb.descriptors.Reads[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse] = _root_.scalapb.descriptors.Reads{
+  implicit def messageReads: _root_.scalapb.descriptors.Reads[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse] = _root_.scalapb.descriptors.Reads{
     case _root_.scalapb.descriptors.PMessage(__fieldsMap) =>
       _root_.scala.Predef.require(__fieldsMap.keys.forall(_.containingMessage eq scalaDescriptor), "FieldDescriptor does not match message type.")
-      dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse(
-        identities = __fieldsMap.get(scalaDescriptor.findFieldByNumber(1).get).map(_.as[_root_.scala.Seq[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity]]).getOrElse(_root_.scala.Seq.empty)
+      dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse(
+        identity = __fieldsMap.get(scalaDescriptor.findFieldByNumber(1).get).flatMap(_.as[_root_.scala.Option[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity]])
       )
     case _ => throw new RuntimeException("Expected PMessage")
   }
-  def javaDescriptor: _root_.com.google.protobuf.Descriptors.Descriptor = AdminProto.javaDescriptor.getMessageTypes().get(9)
-  def scalaDescriptor: _root_.scalapb.descriptors.Descriptor = AdminProto.scalaDescriptor.messages(9)
+  def javaDescriptor: _root_.com.google.protobuf.Descriptors.Descriptor = AdminProto.javaDescriptor.getMessageTypes().get(7)
+  def scalaDescriptor: _root_.scalapb.descriptors.Descriptor = AdminProto.scalaDescriptor.messages(7)
   def messageCompanionForFieldNumber(__number: _root_.scala.Int): _root_.scalapb.GeneratedMessageCompanion[_] = {
     var __out: _root_.scalapb.GeneratedMessageCompanion[_] = null
     (__number: @_root_.scala.unchecked) match {
-      case 1 => __out = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity
+      case 1 => __out = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity
     }
     __out
   }
   lazy val nestedMessagesCompanions: Seq[_root_.scalapb.GeneratedMessageCompanion[_ <: _root_.scalapb.GeneratedMessage]] =
     Seq[_root_.scalapb.GeneratedMessageCompanion[_ <: _root_.scalapb.GeneratedMessage]](
-      _root_.dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity
+      _root_.dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity
     )
   def enumCompanionForFieldNumber(__fieldNumber: _root_.scala.Int): _root_.scalapb.GeneratedEnumCompanion[_] = throw new MatchError(__fieldNumber)
-  lazy val defaultInstance = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse(
-    identities = _root_.scala.Seq.empty
+  lazy val defaultInstance = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse(
+    identity = _root_.scala.None
   )
   @SerialVersionUID(0L)
   final case class Identity(
@@ -120,7 +119,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
       addressesIds: _root_.scala.Seq[_root_.scala.Predef.String] = _root_.scala.Seq.empty,
       credentialsIds: _root_.scala.collection.immutable.Map[_root_.scala.Predef.String, _root_.scala.Predef.String] = _root_.scala.collection.immutable.Map.empty,
       schemaId: _root_.scala.Predef.String = "",
-      lock: dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.Lock = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.Lock.UNLOCKED,
+      lock: dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.Lock = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.Lock.UNLOCKED,
       unknownFields: _root_.scalapb.UnknownFieldSet = _root_.scalapb.UnknownFieldSet.empty
       ) extends scalapb.GeneratedMessage with scalapb.lenses.Updatable[Identity] {
       @transient
@@ -161,7 +160,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
           __size += _root_.com.google.protobuf.CodedOutputStream.computeStringSize(6, __value)
         }
         credentialsIds.foreach { __item =>
-          val __value = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity._typemapper_credentialsIds.toBase(__item)
+          val __value = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity._typemapper_credentialsIds.toBase(__item)
           __size += 1 + _root_.com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(__value.serializedSize) + __value.serializedSize
         }
         
@@ -226,7 +225,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
           _output__.writeString(6, __m)
         };
         credentialsIds.foreach { __v =>
-          val __m = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity._typemapper_credentialsIds.toBase(__v)
+          val __m = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity._typemapper_credentialsIds.toBase(__v)
           _output__.writeTag(7, 2)
           _output__.writeUInt32NoTag(__m.serializedSize)
           __m.writeTo(_output__)
@@ -263,7 +262,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
       def addAllCredentialsIds(__vs: Iterable[(_root_.scala.Predef.String, _root_.scala.Predef.String)]): Identity = copy(credentialsIds = credentialsIds ++ __vs)
       def withCredentialsIds(__v: _root_.scala.collection.immutable.Map[_root_.scala.Predef.String, _root_.scala.Predef.String]): Identity = copy(credentialsIds = __v)
       def withSchemaId(__v: _root_.scala.Predef.String): Identity = copy(schemaId = __v)
-      def withLock(__v: dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.Lock): Identity = copy(lock = __v)
+      def withLock(__v: dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.Lock): Identity = copy(lock = __v)
       def withUnknownFields(__v: _root_.scalapb.UnknownFieldSet) = copy(unknownFields = __v)
       def discardUnknownFields = copy(unknownFields = _root_.scalapb.UnknownFieldSet.empty)
       def getFieldByNumber(__fieldNumber: _root_.scala.Int): _root_.scala.Any = {
@@ -283,7 +282,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
             if (__t != "") __t else null
           }
           case 6 => addressesIds
-          case 7 => credentialsIds.iterator.map(dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity._typemapper_credentialsIds.toBase(_)).toSeq
+          case 7 => credentialsIds.iterator.map(dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity._typemapper_credentialsIds.toBase(_)).toSeq
           case 8 => {
             val __t = schemaId
             if (__t != "") __t else null
@@ -303,19 +302,19 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
           case 4 => _root_.scalapb.descriptors.PString(mainIdentifier)
           case 5 => _root_.scalapb.descriptors.PString(traitsId)
           case 6 => _root_.scalapb.descriptors.PRepeated(addressesIds.iterator.map(_root_.scalapb.descriptors.PString(_)).toVector)
-          case 7 => _root_.scalapb.descriptors.PRepeated(credentialsIds.iterator.map(dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity._typemapper_credentialsIds.toBase(_).toPMessage).toVector)
+          case 7 => _root_.scalapb.descriptors.PRepeated(credentialsIds.iterator.map(dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity._typemapper_credentialsIds.toBase(_).toPMessage).toVector)
           case 8 => _root_.scalapb.descriptors.PString(schemaId)
           case 9 => _root_.scalapb.descriptors.PEnum(lock.scalaValueDescriptor)
         }
       }
       def toProtoString: _root_.scala.Predef.String = _root_.scalapb.TextFormat.printToUnicodeString(this)
-      def companion: dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.type = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity
-      // @@protoc_insertion_point(GeneratedMessage[depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity])
+      def companion: dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.type = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity
+      // @@protoc_insertion_point(GeneratedMessage[depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity])
   }
   
-  object Identity extends scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity] {
-    implicit def messageCompanion: scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity] = this
-    def parseFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity = {
+  object Identity extends scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity] {
+    implicit def messageCompanion: scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity] = this
+    def parseFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity = {
       var __identityId: _root_.scala.Predef.String = ""
       var __createdAt: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp] = _root_.scala.None
       var __updatedAt: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp] = _root_.scala.None
@@ -324,7 +323,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
       val __addressesIds: _root_.scala.collection.immutable.VectorBuilder[_root_.scala.Predef.String] = new _root_.scala.collection.immutable.VectorBuilder[_root_.scala.Predef.String]
       val __credentialsIds: _root_.scala.collection.mutable.Builder[(_root_.scala.Predef.String, _root_.scala.Predef.String), _root_.scala.collection.immutable.Map[_root_.scala.Predef.String, _root_.scala.Predef.String]] = _root_.scala.collection.immutable.Map.newBuilder[_root_.scala.Predef.String, _root_.scala.Predef.String]
       var __schemaId: _root_.scala.Predef.String = ""
-      var __lock: dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.Lock = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.Lock.UNLOCKED
+      var __lock: dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.Lock = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.Lock.UNLOCKED
       var `_unknownFields__`: _root_.scalapb.UnknownFieldSet.Builder = null
       var _done__ = false
       while (!_done__) {
@@ -344,11 +343,11 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
           case 50 =>
             __addressesIds += _input__.readStringRequireUtf8()
           case 58 =>
-            __credentialsIds += dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity._typemapper_credentialsIds.toCustom(_root_.scalapb.LiteParser.readMessage[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry](_input__))
+            __credentialsIds += dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity._typemapper_credentialsIds.toCustom(_root_.scalapb.LiteParser.readMessage[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry](_input__))
           case 66 =>
             __schemaId = _input__.readStringRequireUtf8()
           case 72 =>
-            __lock = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.Lock.fromValue(_input__.readEnum())
+            __lock = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.Lock.fromValue(_input__.readEnum())
           case tag =>
             if (_unknownFields__ == null) {
               _unknownFields__ = new _root_.scalapb.UnknownFieldSet.Builder()
@@ -356,7 +355,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
             _unknownFields__.parseField(tag, _input__)
         }
       }
-      dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity(
+      dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity(
           identityId = __identityId,
           createdAt = __createdAt,
           updatedAt = __updatedAt,
@@ -369,43 +368,43 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
           unknownFields = if (_unknownFields__ == null) _root_.scalapb.UnknownFieldSet.empty else _unknownFields__.result()
       )
     }
-    implicit def messageReads: _root_.scalapb.descriptors.Reads[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity] = _root_.scalapb.descriptors.Reads{
+    implicit def messageReads: _root_.scalapb.descriptors.Reads[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity] = _root_.scalapb.descriptors.Reads{
       case _root_.scalapb.descriptors.PMessage(__fieldsMap) =>
         _root_.scala.Predef.require(__fieldsMap.keys.forall(_.containingMessage eq scalaDescriptor), "FieldDescriptor does not match message type.")
-        dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity(
+        dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity(
           identityId = __fieldsMap.get(scalaDescriptor.findFieldByNumber(1).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
           createdAt = __fieldsMap.get(scalaDescriptor.findFieldByNumber(2).get).flatMap(_.as[_root_.scala.Option[com.google.protobuf.timestamp.Timestamp]]),
           updatedAt = __fieldsMap.get(scalaDescriptor.findFieldByNumber(3).get).flatMap(_.as[_root_.scala.Option[com.google.protobuf.timestamp.Timestamp]]),
           mainIdentifier = __fieldsMap.get(scalaDescriptor.findFieldByNumber(4).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
           traitsId = __fieldsMap.get(scalaDescriptor.findFieldByNumber(5).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
           addressesIds = __fieldsMap.get(scalaDescriptor.findFieldByNumber(6).get).map(_.as[_root_.scala.Seq[_root_.scala.Predef.String]]).getOrElse(_root_.scala.Seq.empty),
-          credentialsIds = __fieldsMap.get(scalaDescriptor.findFieldByNumber(7).get).map(_.as[_root_.scala.Seq[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry]]).getOrElse(_root_.scala.Seq.empty).iterator.map(dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity._typemapper_credentialsIds.toCustom(_)).toMap,
+          credentialsIds = __fieldsMap.get(scalaDescriptor.findFieldByNumber(7).get).map(_.as[_root_.scala.Seq[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry]]).getOrElse(_root_.scala.Seq.empty).iterator.map(dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity._typemapper_credentialsIds.toCustom(_)).toMap,
           schemaId = __fieldsMap.get(scalaDescriptor.findFieldByNumber(8).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
-          lock = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.Lock.fromValue(__fieldsMap.get(scalaDescriptor.findFieldByNumber(9).get).map(_.as[_root_.scalapb.descriptors.EnumValueDescriptor]).getOrElse(dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.Lock.UNLOCKED.scalaValueDescriptor).number)
+          lock = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.Lock.fromValue(__fieldsMap.get(scalaDescriptor.findFieldByNumber(9).get).map(_.as[_root_.scalapb.descriptors.EnumValueDescriptor]).getOrElse(dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.Lock.UNLOCKED.scalaValueDescriptor).number)
         )
       case _ => throw new RuntimeException("Expected PMessage")
     }
-    def javaDescriptor: _root_.com.google.protobuf.Descriptors.Descriptor = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.javaDescriptor.getNestedTypes().get(0)
-    def scalaDescriptor: _root_.scalapb.descriptors.Descriptor = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.scalaDescriptor.nestedMessages(0)
+    def javaDescriptor: _root_.com.google.protobuf.Descriptors.Descriptor = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.javaDescriptor.getNestedTypes().get(0)
+    def scalaDescriptor: _root_.scalapb.descriptors.Descriptor = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.scalaDescriptor.nestedMessages(0)
     def messageCompanionForFieldNumber(__number: _root_.scala.Int): _root_.scalapb.GeneratedMessageCompanion[_] = {
       var __out: _root_.scalapb.GeneratedMessageCompanion[_] = null
       (__number: @_root_.scala.unchecked) match {
         case 2 => __out = com.google.protobuf.timestamp.Timestamp
         case 3 => __out = com.google.protobuf.timestamp.Timestamp
-        case 7 => __out = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry
+        case 7 => __out = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry
       }
       __out
     }
     lazy val nestedMessagesCompanions: Seq[_root_.scalapb.GeneratedMessageCompanion[_ <: _root_.scalapb.GeneratedMessage]] =
       Seq[_root_.scalapb.GeneratedMessageCompanion[_ <: _root_.scalapb.GeneratedMessage]](
-        _root_.dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry
+        _root_.dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry
       )
     def enumCompanionForFieldNumber(__fieldNumber: _root_.scala.Int): _root_.scalapb.GeneratedEnumCompanion[_] = {
       (__fieldNumber: @_root_.scala.unchecked) match {
-        case 9 => dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.Lock
+        case 9 => dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.Lock
       }
     }
-    lazy val defaultInstance = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity(
+    lazy val defaultInstance = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity(
       identityId = "",
       createdAt = _root_.scala.None,
       updatedAt = _root_.scala.None,
@@ -414,14 +413,14 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
       addressesIds = _root_.scala.Seq.empty,
       credentialsIds = _root_.scala.collection.immutable.Map.empty,
       schemaId = "",
-      lock = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.Lock.UNLOCKED
+      lock = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.Lock.UNLOCKED
     )
     sealed abstract class Lock(val value: _root_.scala.Int) extends _root_.scalapb.GeneratedEnum {
       type EnumType = Lock
       def isUnlocked: _root_.scala.Boolean = false
       def isAdminLocked: _root_.scala.Boolean = false
-      def companion: _root_.scalapb.GeneratedEnumCompanion[Lock] = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.Lock
-      final def asRecognized: _root_.scala.Option[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.Lock.Recognized] = if (isUnrecognized) _root_.scala.None else _root_.scala.Some(this.asInstanceOf[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.Lock.Recognized])
+      def companion: _root_.scalapb.GeneratedEnumCompanion[Lock] = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.Lock
+      final def asRecognized: _root_.scala.Option[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.Lock.Recognized] = if (isUnrecognized) _root_.scala.None else _root_.scala.Some(this.asInstanceOf[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.Lock.Recognized])
     }
     
     object Lock extends _root_.scalapb.GeneratedEnumCompanion[Lock] {
@@ -450,8 +449,8 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
         case 1 => ADMIN_LOCKED
         case __other => Unrecognized(__other)
       }
-      def javaDescriptor: _root_.com.google.protobuf.Descriptors.EnumDescriptor = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.javaDescriptor.getEnumTypes().get(0)
-      def scalaDescriptor: _root_.scalapb.descriptors.EnumDescriptor = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.scalaDescriptor.enums(0)
+      def javaDescriptor: _root_.com.google.protobuf.Descriptors.EnumDescriptor = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.javaDescriptor.getEnumTypes().get(0)
+      def scalaDescriptor: _root_.scalapb.descriptors.EnumDescriptor = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.scalaDescriptor.enums(0)
     }
     @SerialVersionUID(0L)
     final case class CredentialsIdsEntry(
@@ -528,13 +527,13 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
           }
         }
         def toProtoString: _root_.scala.Predef.String = _root_.scalapb.TextFormat.printToUnicodeString(this)
-        def companion: dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry.type = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry
-        // @@protoc_insertion_point(GeneratedMessage[depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry])
+        def companion: dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry.type = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry
+        // @@protoc_insertion_point(GeneratedMessage[depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry])
     }
     
-    object CredentialsIdsEntry extends scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry] {
-      implicit def messageCompanion: scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry] = this
-      def parseFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry = {
+    object CredentialsIdsEntry extends scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry] {
+      implicit def messageCompanion: scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry] = this
+      def parseFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry = {
         var __key: _root_.scala.Predef.String = ""
         var __value: _root_.scala.Predef.String = ""
         var `_unknownFields__`: _root_.scalapb.UnknownFieldSet.Builder = null
@@ -554,50 +553,50 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
               _unknownFields__.parseField(tag, _input__)
           }
         }
-        dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry(
+        dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry(
             key = __key,
             value = __value,
             unknownFields = if (_unknownFields__ == null) _root_.scalapb.UnknownFieldSet.empty else _unknownFields__.result()
         )
       }
-      implicit def messageReads: _root_.scalapb.descriptors.Reads[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry] = _root_.scalapb.descriptors.Reads{
+      implicit def messageReads: _root_.scalapb.descriptors.Reads[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry] = _root_.scalapb.descriptors.Reads{
         case _root_.scalapb.descriptors.PMessage(__fieldsMap) =>
           _root_.scala.Predef.require(__fieldsMap.keys.forall(_.containingMessage eq scalaDescriptor), "FieldDescriptor does not match message type.")
-          dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry(
+          dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry(
             key = __fieldsMap.get(scalaDescriptor.findFieldByNumber(1).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
             value = __fieldsMap.get(scalaDescriptor.findFieldByNumber(2).get).map(_.as[_root_.scala.Predef.String]).getOrElse("")
           )
         case _ => throw new RuntimeException("Expected PMessage")
       }
-      def javaDescriptor: _root_.com.google.protobuf.Descriptors.Descriptor = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.javaDescriptor.getNestedTypes().get(0)
-      def scalaDescriptor: _root_.scalapb.descriptors.Descriptor = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.scalaDescriptor.nestedMessages(0)
+      def javaDescriptor: _root_.com.google.protobuf.Descriptors.Descriptor = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.javaDescriptor.getNestedTypes().get(0)
+      def scalaDescriptor: _root_.scalapb.descriptors.Descriptor = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.scalaDescriptor.nestedMessages(0)
       def messageCompanionForFieldNumber(__number: _root_.scala.Int): _root_.scalapb.GeneratedMessageCompanion[_] = throw new MatchError(__number)
       lazy val nestedMessagesCompanions: Seq[_root_.scalapb.GeneratedMessageCompanion[_ <: _root_.scalapb.GeneratedMessage]] = Seq.empty
       def enumCompanionForFieldNumber(__fieldNumber: _root_.scala.Int): _root_.scalapb.GeneratedEnumCompanion[_] = throw new MatchError(__fieldNumber)
-      lazy val defaultInstance = dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry(
+      lazy val defaultInstance = dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry(
         key = "",
         value = ""
       )
-      implicit class CredentialsIdsEntryLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry](_l) {
+      implicit class CredentialsIdsEntryLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry](_l) {
         def key: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.key)((c_, f_) => c_.copy(key = f_))
         def value: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.value)((c_, f_) => c_.copy(value = f_))
       }
       final val KEY_FIELD_NUMBER = 1
       final val VALUE_FIELD_NUMBER = 2
       @transient
-      implicit val keyValueMapper: _root_.scalapb.TypeMapper[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry, (_root_.scala.Predef.String, _root_.scala.Predef.String)] =
-        _root_.scalapb.TypeMapper[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry, (_root_.scala.Predef.String, _root_.scala.Predef.String)](__m => (__m.key, __m.value))(__p => dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry(__p._1, __p._2))
+      implicit val keyValueMapper: _root_.scalapb.TypeMapper[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry, (_root_.scala.Predef.String, _root_.scala.Predef.String)] =
+        _root_.scalapb.TypeMapper[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry, (_root_.scala.Predef.String, _root_.scala.Predef.String)](__m => (__m.key, __m.value))(__p => dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry(__p._1, __p._2))
       def of(
         key: _root_.scala.Predef.String,
         value: _root_.scala.Predef.String
-      ): _root_.dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry = _root_.dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry(
+      ): _root_.dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry = _root_.dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry(
         key,
         value
       )
-      // @@protoc_insertion_point(GeneratedMessageCompanion[depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry])
+      // @@protoc_insertion_point(GeneratedMessageCompanion[depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry])
     }
     
-    implicit class IdentityLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity](_l) {
+    implicit class IdentityLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity](_l) {
       def identityId: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.identityId)((c_, f_) => c_.copy(identityId = f_))
       def createdAt: _root_.scalapb.lenses.Lens[UpperPB, com.google.protobuf.timestamp.Timestamp] = field(_.getCreatedAt)((c_, f_) => c_.copy(createdAt = Option(f_)))
       def optionalCreatedAt: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Option[com.google.protobuf.timestamp.Timestamp]] = field(_.createdAt)((c_, f_) => c_.copy(createdAt = f_))
@@ -608,7 +607,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
       def addressesIds: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Seq[_root_.scala.Predef.String]] = field(_.addressesIds)((c_, f_) => c_.copy(addressesIds = f_))
       def credentialsIds: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.collection.immutable.Map[_root_.scala.Predef.String, _root_.scala.Predef.String]] = field(_.credentialsIds)((c_, f_) => c_.copy(credentialsIds = f_))
       def schemaId: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.schemaId)((c_, f_) => c_.copy(schemaId = f_))
-      def lock: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.Lock] = field(_.lock)((c_, f_) => c_.copy(lock = f_))
+      def lock: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.Lock] = field(_.lock)((c_, f_) => c_.copy(lock = f_))
     }
     final val IDENTITY_ID_FIELD_NUMBER = 1
     final val CREATED_AT_FIELD_NUMBER = 2
@@ -620,7 +619,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
     final val SCHEMA_ID_FIELD_NUMBER = 8
     final val LOCK_FIELD_NUMBER = 9
     @transient
-    private[admin] val _typemapper_credentialsIds: _root_.scalapb.TypeMapper[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry, (_root_.scala.Predef.String, _root_.scala.Predef.String)] = implicitly[_root_.scalapb.TypeMapper[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry, (_root_.scala.Predef.String, _root_.scala.Predef.String)]]
+    private[admin] val _typemapper_credentialsIds: _root_.scalapb.TypeMapper[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry, (_root_.scala.Predef.String, _root_.scala.Predef.String)] = implicitly[_root_.scalapb.TypeMapper[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.CredentialsIdsEntry, (_root_.scala.Predef.String, _root_.scala.Predef.String)]]
     def of(
       identityId: _root_.scala.Predef.String,
       createdAt: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp],
@@ -630,8 +629,8 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
       addressesIds: _root_.scala.Seq[_root_.scala.Predef.String],
       credentialsIds: _root_.scala.collection.immutable.Map[_root_.scala.Predef.String, _root_.scala.Predef.String],
       schemaId: _root_.scala.Predef.String,
-      lock: dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.Lock
-    ): _root_.dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity = _root_.dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity(
+      lock: dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity.Lock
+    ): _root_.dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity = _root_.dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity(
       identityId,
       createdAt,
       updatedAt,
@@ -642,17 +641,18 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
       schemaId,
       lock
     )
-    // @@protoc_insertion_point(GeneratedMessageCompanion[depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse.Identity])
+    // @@protoc_insertion_point(GeneratedMessageCompanion[depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse.Identity])
   }
   
-  implicit class GetIdentitiesByAttributeResponseLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse](_l) {
-    def identities: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Seq[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity]] = field(_.identities)((c_, f_) => c_.copy(identities = f_))
+  implicit class GetIdentityByIdentifierResponseLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse](_l) {
+    def identity: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity] = field(_.getIdentity)((c_, f_) => c_.copy(identity = Option(f_)))
+    def optionalIdentity: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Option[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity]] = field(_.identity)((c_, f_) => c_.copy(identity = f_))
   }
-  final val IDENTITIES_FIELD_NUMBER = 1
+  final val IDENTITY_FIELD_NUMBER = 1
   def of(
-    identities: _root_.scala.Seq[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity]
-  ): _root_.dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse = _root_.dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse(
-    identities
+    identity: _root_.scala.Option[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse.Identity]
+  ): _root_.dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse = _root_.dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse(
+    identity
   )
-  // @@protoc_insertion_point(GeneratedMessageCompanion[depot.devtools.auth.v0.identity.admin.GetIdentitiesByAttributeResponse])
+  // @@protoc_insertion_point(GeneratedMessageCompanion[depot.devtools.auth.v0.identity.admin.GetIdentityByIdentifierResponse])
 }

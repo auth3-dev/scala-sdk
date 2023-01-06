@@ -21,6 +21,16 @@ object AdminGrpc {
       .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(1)))
       .build()
   
+  val METHOD_GET_IDENTITY_BY_IDENTIFIER: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetIdentityByIdentifierRequest, dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse] =
+    _root_.io.grpc.MethodDescriptor.newBuilder()
+      .setType(_root_.io.grpc.MethodDescriptor.MethodType.UNARY)
+      .setFullMethodName(_root_.io.grpc.MethodDescriptor.generateFullMethodName("depot.devtools.auth.v0.identity.admin.Admin", "GetIdentityByIdentifier"))
+      .setSampledToLocalTracing(true)
+      .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetIdentityByIdentifierRequest])
+      .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse])
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(2)))
+      .build()
+  
   val METHOD_GET_IDENTITIES_BY_ATTRIBUTE: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeRequest, dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse] =
     _root_.io.grpc.MethodDescriptor.newBuilder()
       .setType(_root_.io.grpc.MethodDescriptor.MethodType.UNARY)
@@ -28,7 +38,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(2)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(3)))
       .build()
   
   val METHOD_GET_IDENTITIES: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetIdentitiesRequest, dev.auth3.identity.admin.admin.GetIdentitiesResponse] =
@@ -38,7 +48,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetIdentitiesRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetIdentitiesResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(3)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(4)))
       .build()
   
   val METHOD_UPDATE_IDENTITY: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.UpdateIdentityRequest, dev.auth3.identity.admin.admin.UpdateIdentityResponse] =
@@ -48,7 +58,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateIdentityRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateIdentityResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(4)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(5)))
       .build()
   
   val METHOD_DELETE_IDENTITY: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.DeleteIdentityRequest, dev.auth3.identity.admin.admin.DeleteIdentityResponse] =
@@ -58,7 +68,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.DeleteIdentityRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.DeleteIdentityResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(5)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(6)))
       .build()
   
   val METHOD_GET_ADDRESSES: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetAddressesRequest, dev.auth3.identity.admin.admin.GetAddressesResponse] =
@@ -68,7 +78,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetAddressesRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetAddressesResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(6)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(7)))
       .build()
   
   val METHOD_GET_ADDRESS: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetAddressRequest, dev.auth3.identity.admin.admin.GetAddressResponse] =
@@ -78,7 +88,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetAddressRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetAddressResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(7)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(8)))
       .build()
   
   val METHOD_UPDATE_ADDRESS: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.UpdateAddressRequest, dev.auth3.identity.admin.admin.UpdateAddressResponse] =
@@ -88,7 +98,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateAddressRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateAddressResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(8)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(9)))
       .build()
   
   val METHOD_GET_TRAITS: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetTraitsRequest, dev.auth3.identity.admin.admin.GetTraitsResponse] =
@@ -98,7 +108,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetTraitsRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetTraitsResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(9)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(10)))
       .build()
   
   val METHOD_UPDATE_TRAITS: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.UpdateTraitsRequest, dev.auth3.identity.admin.admin.UpdateTraitsResponse] =
@@ -108,7 +118,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateTraitsRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateTraitsResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(10)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(11)))
       .build()
   
   val METHOD_GET_CREDENTIALS: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetCredentialsRequest, dev.auth3.identity.admin.admin.GetCredentialsResponse] =
@@ -118,7 +128,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetCredentialsRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetCredentialsResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(11)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(12)))
       .build()
   
   val METHOD_UPDATE_CREDENTIAL: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.UpdateCredentialRequest, dev.auth3.identity.admin.admin.UpdateCredentialResponse] =
@@ -128,7 +138,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateCredentialRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateCredentialResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(12)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(13)))
       .build()
   
   val METHOD_GET_IDENTITY_LOGIN_ATTEMPTS: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetIdentityLoginAttemptsRequest, dev.auth3.identity.admin.admin.GetIdentityLoginAttemptsResponse] =
@@ -138,7 +148,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetIdentityLoginAttemptsRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetIdentityLoginAttemptsResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(13)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(14)))
       .build()
   
   val METHOD_CREATE_CONNECTION: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.CreateConnectionRequest, dev.auth3.identity.admin.admin.CreateConnectionResponse] =
@@ -148,7 +158,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.CreateConnectionRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.CreateConnectionResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(14)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(15)))
       .build()
   
   val METHOD_GET_CONNECTIONS: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetConnectionsRequest, dev.auth3.identity.admin.admin.GetConnectionsResponse] =
@@ -158,7 +168,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetConnectionsRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetConnectionsResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(15)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(16)))
       .build()
   
   val METHOD_UPDATE_CONNECTION: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.UpdateConnectionRequest, dev.auth3.identity.admin.admin.UpdateConnectionResponse] =
@@ -168,7 +178,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateConnectionRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateConnectionResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(16)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(17)))
       .build()
   
   val METHOD_DELETE_CONNECTION: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.DeleteConnectionRequest, dev.auth3.identity.admin.admin.DeleteConnectionResponse] =
@@ -178,7 +188,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.DeleteConnectionRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.DeleteConnectionResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(17)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(18)))
       .build()
   
   val METHOD_CREATE_ID_SCHEMA: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.CreateIdSchemaRequest, dev.auth3.identity.admin.admin.CreateIdSchemaResponse] =
@@ -188,7 +198,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.CreateIdSchemaRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.CreateIdSchemaResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(18)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(19)))
       .build()
   
   val METHOD_GET_ID_SCHEMAS: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetIdSchemasRequest, dev.auth3.identity.admin.admin.GetIdSchemasResponse] =
@@ -198,7 +208,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetIdSchemasRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetIdSchemasResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(19)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(20)))
       .build()
   
   val METHOD_GET_ID_SCHEMA: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetIdSchemaRequest, dev.auth3.identity.admin.admin.GetIdSchemaResponse] =
@@ -208,7 +218,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetIdSchemaRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetIdSchemaResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(20)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(21)))
       .build()
   
   val METHOD_GET_DEFAULT_ID_SCHEMA: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetDefaultIdSchemaRequest, dev.auth3.identity.admin.admin.GetDefaultIdSchemaResponse] =
@@ -218,7 +228,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetDefaultIdSchemaRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetDefaultIdSchemaResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(21)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(22)))
       .build()
   
   val METHOD_UPDATE_ID_SCHEMA: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.UpdateIdSchemaRequest, dev.auth3.identity.admin.admin.UpdateIdSchemaResponse] =
@@ -228,7 +238,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateIdSchemaRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateIdSchemaResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(22)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(23)))
       .build()
   
   val METHOD_MARK_DEFAULT_ID_SCHEMA: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.MarkDefaultIdSchemaRequest, dev.auth3.identity.admin.admin.MarkDefaultIdSchemaResponse] =
@@ -238,7 +248,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.MarkDefaultIdSchemaRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.MarkDefaultIdSchemaResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(23)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(24)))
       .build()
   
   val METHOD_DELETE_ID_SCHEMA: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.DeleteIdSchemaRequest, dev.auth3.identity.admin.admin.DeleteIdSchemaResponse] =
@@ -248,7 +258,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.DeleteIdSchemaRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.DeleteIdSchemaResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(24)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(25)))
       .build()
   
   val METHOD_CREATE_OAUTH2CLIENT: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.CreateOAuth2ClientRequest, dev.auth3.identity.admin.admin.CreateOAuth2ClientResponse] =
@@ -258,7 +268,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.CreateOAuth2ClientRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.CreateOAuth2ClientResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(25)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(26)))
       .build()
   
   val METHOD_GET_OAUTH2CLIENTS: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetOAuth2ClientsRequest, dev.auth3.identity.admin.admin.GetOAuth2ClientsResponse] =
@@ -268,7 +278,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetOAuth2ClientsRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetOAuth2ClientsResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(26)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(27)))
       .build()
   
   val METHOD_UPDATE_OAUTH2CLIENT: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.UpdateOAuth2ClientRequest, dev.auth3.identity.admin.admin.UpdateOAuth2ClientResponse] =
@@ -278,7 +288,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateOAuth2ClientRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateOAuth2ClientResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(27)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(28)))
       .build()
   
   val METHOD_DELETE_OAUTH2CLIENT: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.DeleteOAuth2ClientRequest, dev.auth3.identity.admin.admin.DeleteOAuth2ClientResponse] =
@@ -288,7 +298,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.DeleteOAuth2ClientRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.DeleteOAuth2ClientResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(28)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(29)))
       .build()
   
   val METHOD_GET_EMAILS_SETUP: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetEmailsSetupRequest, dev.auth3.identity.admin.admin.GetEmailsSetupResponse] =
@@ -298,7 +308,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetEmailsSetupRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetEmailsSetupResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(29)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(30)))
       .build()
   
   val METHOD_UPDATE_EMAILS_SETUP: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.UpdateEmailsSetupRequest, dev.auth3.identity.admin.admin.UpdateEmailsSetupResponse] =
@@ -308,7 +318,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateEmailsSetupRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateEmailsSetupResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(30)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(31)))
       .build()
   
   val METHOD_GET_USER_BASE_STATISTICS: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetUserBaseStatisticsRequest, dev.auth3.identity.admin.admin.GetUserBaseStatisticsResponse] =
@@ -318,7 +328,7 @@ object AdminGrpc {
       .setSampledToLocalTracing(true)
       .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetUserBaseStatisticsRequest])
       .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetUserBaseStatisticsResponse])
-      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(31)))
+      .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(32)))
       .build()
   
   val SERVICE: _root_.io.grpc.ServiceDescriptor =
@@ -326,6 +336,7 @@ object AdminGrpc {
       .setSchemaDescriptor(new _root_.scalapb.grpc.ConcreteProtoFileDescriptorSupplier(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor))
       .addMethod(METHOD_CREATE_IDENTITY)
       .addMethod(METHOD_GET_IDENTITY)
+      .addMethod(METHOD_GET_IDENTITY_BY_IDENTIFIER)
       .addMethod(METHOD_GET_IDENTITIES_BY_ATTRIBUTE)
       .addMethod(METHOD_GET_IDENTITIES)
       .addMethod(METHOD_UPDATE_IDENTITY)
@@ -362,6 +373,7 @@ object AdminGrpc {
     override def serviceCompanion = Admin
     def createIdentity(request: dev.auth3.identity.admin.admin.CreateIdentityRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.CreateIdentityResponse]
     def getIdentity(request: dev.auth3.identity.admin.admin.GetIdentityRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetIdentityResponse]
+    def getIdentityByIdentifier(request: dev.auth3.identity.admin.admin.GetIdentityByIdentifierRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse]
     def getIdentitiesByAttribute(request: dev.auth3.identity.admin.admin.GetIdentitiesByAttributeRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse]
     def getIdentities(request: dev.auth3.identity.admin.admin.GetIdentitiesRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetIdentitiesResponse]
     def updateIdentity(request: dev.auth3.identity.admin.admin.UpdateIdentityRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.UpdateIdentityResponse]
@@ -412,6 +424,13 @@ object AdminGrpc {
         _root_.io.grpc.stub.ServerCalls.asyncUnaryCall(new _root_.io.grpc.stub.ServerCalls.UnaryMethod[dev.auth3.identity.admin.admin.GetIdentityRequest, dev.auth3.identity.admin.admin.GetIdentityResponse] {
           override def invoke(request: dev.auth3.identity.admin.admin.GetIdentityRequest, observer: _root_.io.grpc.stub.StreamObserver[dev.auth3.identity.admin.admin.GetIdentityResponse]): _root_.scala.Unit =
             serviceImpl.getIdentity(request).onComplete(scalapb.grpc.Grpc.completeObserver(observer))(
+              executionContext)
+        }))
+      .addMethod(
+        METHOD_GET_IDENTITY_BY_IDENTIFIER,
+        _root_.io.grpc.stub.ServerCalls.asyncUnaryCall(new _root_.io.grpc.stub.ServerCalls.UnaryMethod[dev.auth3.identity.admin.admin.GetIdentityByIdentifierRequest, dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse] {
+          override def invoke(request: dev.auth3.identity.admin.admin.GetIdentityByIdentifierRequest, observer: _root_.io.grpc.stub.StreamObserver[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse]): _root_.scala.Unit =
+            serviceImpl.getIdentityByIdentifier(request).onComplete(scalapb.grpc.Grpc.completeObserver(observer))(
               executionContext)
         }))
       .addMethod(
@@ -631,6 +650,7 @@ object AdminGrpc {
     def serviceCompanion = Admin
     def createIdentity(request: dev.auth3.identity.admin.admin.CreateIdentityRequest): dev.auth3.identity.admin.admin.CreateIdentityResponse
     def getIdentity(request: dev.auth3.identity.admin.admin.GetIdentityRequest): dev.auth3.identity.admin.admin.GetIdentityResponse
+    def getIdentityByIdentifier(request: dev.auth3.identity.admin.admin.GetIdentityByIdentifierRequest): dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse
     def getIdentitiesByAttribute(request: dev.auth3.identity.admin.admin.GetIdentitiesByAttributeRequest): dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse
     def getIdentities(request: dev.auth3.identity.admin.admin.GetIdentitiesRequest): dev.auth3.identity.admin.admin.GetIdentitiesResponse
     def updateIdentity(request: dev.auth3.identity.admin.admin.UpdateIdentityRequest): dev.auth3.identity.admin.admin.UpdateIdentityResponse
@@ -670,6 +690,10 @@ object AdminGrpc {
     
     override def getIdentity(request: dev.auth3.identity.admin.admin.GetIdentityRequest): dev.auth3.identity.admin.admin.GetIdentityResponse = {
       _root_.scalapb.grpc.ClientCalls.blockingUnaryCall(channel, METHOD_GET_IDENTITY, options, request)
+    }
+    
+    override def getIdentityByIdentifier(request: dev.auth3.identity.admin.admin.GetIdentityByIdentifierRequest): dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse = {
+      _root_.scalapb.grpc.ClientCalls.blockingUnaryCall(channel, METHOD_GET_IDENTITY_BY_IDENTIFIER, options, request)
     }
     
     override def getIdentitiesByAttribute(request: dev.auth3.identity.admin.admin.GetIdentitiesByAttributeRequest): dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse = {
@@ -802,6 +826,10 @@ object AdminGrpc {
     
     override def getIdentity(request: dev.auth3.identity.admin.admin.GetIdentityRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetIdentityResponse] = {
       _root_.scalapb.grpc.ClientCalls.asyncUnaryCall(channel, METHOD_GET_IDENTITY, options, request)
+    }
+    
+    override def getIdentityByIdentifier(request: dev.auth3.identity.admin.admin.GetIdentityByIdentifierRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetIdentityByIdentifierResponse] = {
+      _root_.scalapb.grpc.ClientCalls.asyncUnaryCall(channel, METHOD_GET_IDENTITY_BY_IDENTIFIER, options, request)
     }
     
     override def getIdentitiesByAttribute(request: dev.auth3.identity.admin.admin.GetIdentitiesByAttributeRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse] = {
