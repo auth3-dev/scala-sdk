@@ -7,7 +7,6 @@ package dev.auth3.identity.admin.admin
 
 @SerialVersionUID(0L)
 final case class UpdateConnectionRequest(
-    name: _root_.scala.Predef.String = "",
     clientId: _root_.scala.Predef.String = "",
     clientSecret: _root_.scala.Predef.String = "",
     buttonImageUrl: _root_.scala.Predef.String = "",
@@ -23,13 +22,6 @@ final case class UpdateConnectionRequest(
     private[this] var __serializedSizeMemoized: _root_.scala.Int = 0
     private[this] def __computeSerializedSize(): _root_.scala.Int = {
       var __size = 0
-      
-      {
-        val __value = name
-        if (!__value.isEmpty) {
-          __size += _root_.com.google.protobuf.CodedOutputStream.computeStringSize(1, __value)
-        }
-      };
       
       {
         val __value = clientId
@@ -104,12 +96,6 @@ final case class UpdateConnectionRequest(
     }
     def writeTo(`_output__`: _root_.com.google.protobuf.CodedOutputStream): _root_.scala.Unit = {
       {
-        val __v = name
-        if (!__v.isEmpty) {
-          _output__.writeString(1, __v)
-        }
-      };
-      {
         val __v = clientId
         if (!__v.isEmpty) {
           _output__.writeString(2, __v)
@@ -163,7 +149,6 @@ final case class UpdateConnectionRequest(
       };
       unknownFields.writeTo(_output__)
     }
-    def withName(__v: _root_.scala.Predef.String): UpdateConnectionRequest = copy(name = __v)
     def withClientId(__v: _root_.scala.Predef.String): UpdateConnectionRequest = copy(clientId = __v)
     def withClientSecret(__v: _root_.scala.Predef.String): UpdateConnectionRequest = copy(clientSecret = __v)
     def withButtonImageUrl(__v: _root_.scala.Predef.String): UpdateConnectionRequest = copy(buttonImageUrl = __v)
@@ -180,10 +165,6 @@ final case class UpdateConnectionRequest(
     def discardUnknownFields = copy(unknownFields = _root_.scalapb.UnknownFieldSet.empty)
     def getFieldByNumber(__fieldNumber: _root_.scala.Int): _root_.scala.Any = {
       (__fieldNumber: @_root_.scala.unchecked) match {
-        case 1 => {
-          val __t = name
-          if (__t != "") __t else null
-        }
         case 2 => {
           val __t = clientId
           if (__t != "") __t else null
@@ -222,7 +203,6 @@ final case class UpdateConnectionRequest(
     def getField(__field: _root_.scalapb.descriptors.FieldDescriptor): _root_.scalapb.descriptors.PValue = {
       _root_.scala.Predef.require(__field.containingMessage eq companion.scalaDescriptor)
       (__field.number: @_root_.scala.unchecked) match {
-        case 1 => _root_.scalapb.descriptors.PString(name)
         case 2 => _root_.scalapb.descriptors.PString(clientId)
         case 3 => _root_.scalapb.descriptors.PString(clientSecret)
         case 4 => _root_.scalapb.descriptors.PString(buttonImageUrl)
@@ -242,7 +222,6 @@ final case class UpdateConnectionRequest(
 object UpdateConnectionRequest extends scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.UpdateConnectionRequest] {
   implicit def messageCompanion: scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.UpdateConnectionRequest] = this
   def parseFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): dev.auth3.identity.admin.admin.UpdateConnectionRequest = {
-    var __name: _root_.scala.Predef.String = ""
     var __clientId: _root_.scala.Predef.String = ""
     var __clientSecret: _root_.scala.Predef.String = ""
     var __buttonImageUrl: _root_.scala.Predef.String = ""
@@ -258,8 +237,6 @@ object UpdateConnectionRequest extends scalapb.GeneratedMessageCompanion[dev.aut
       val _tag__ = _input__.readTag()
       _tag__ match {
         case 0 => _done__ = true
-        case 10 =>
-          __name = _input__.readStringRequireUtf8()
         case 18 =>
           __clientId = _input__.readStringRequireUtf8()
         case 26 =>
@@ -286,7 +263,6 @@ object UpdateConnectionRequest extends scalapb.GeneratedMessageCompanion[dev.aut
       }
     }
     dev.auth3.identity.admin.admin.UpdateConnectionRequest(
-        name = __name,
         clientId = __clientId,
         clientSecret = __clientSecret,
         buttonImageUrl = __buttonImageUrl,
@@ -303,7 +279,6 @@ object UpdateConnectionRequest extends scalapb.GeneratedMessageCompanion[dev.aut
     case _root_.scalapb.descriptors.PMessage(__fieldsMap) =>
       _root_.scala.Predef.require(__fieldsMap.keys.forall(_.containingMessage eq scalaDescriptor), "FieldDescriptor does not match message type.")
       dev.auth3.identity.admin.admin.UpdateConnectionRequest(
-        name = __fieldsMap.get(scalaDescriptor.findFieldByNumber(1).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
         clientId = __fieldsMap.get(scalaDescriptor.findFieldByNumber(2).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
         clientSecret = __fieldsMap.get(scalaDescriptor.findFieldByNumber(3).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
         buttonImageUrl = __fieldsMap.get(scalaDescriptor.findFieldByNumber(4).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
@@ -327,7 +302,6 @@ object UpdateConnectionRequest extends scalapb.GeneratedMessageCompanion[dev.aut
     }
   }
   lazy val defaultInstance = dev.auth3.identity.admin.admin.UpdateConnectionRequest(
-    name = "",
     clientId = "",
     clientSecret = "",
     buttonImageUrl = "",
@@ -881,7 +855,6 @@ object UpdateConnectionRequest extends scalapb.GeneratedMessageCompanion[dev.aut
     def scalaDescriptor: _root_.scalapb.descriptors.EnumDescriptor = dev.auth3.identity.admin.admin.UpdateConnectionRequest.scalaDescriptor.enums(1)
   }
   implicit class UpdateConnectionRequestLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.UpdateConnectionRequest]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, dev.auth3.identity.admin.admin.UpdateConnectionRequest](_l) {
-    def name: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.name)((c_, f_) => c_.copy(name = f_))
     def clientId: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.clientId)((c_, f_) => c_.copy(clientId = f_))
     def clientSecret: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.clientSecret)((c_, f_) => c_.copy(clientSecret = f_))
     def buttonImageUrl: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.buttonImageUrl)((c_, f_) => c_.copy(buttonImageUrl = f_))
@@ -892,7 +865,6 @@ object UpdateConnectionRequest extends scalapb.GeneratedMessageCompanion[dev.aut
     def id: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.id)((c_, f_) => c_.copy(id = f_))
     def scopes: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.scopes)((c_, f_) => c_.copy(scopes = f_))
   }
-  final val NAME_FIELD_NUMBER = 1
   final val CLIENT_ID_FIELD_NUMBER = 2
   final val CLIENT_SECRET_FIELD_NUMBER = 3
   final val BUTTON_IMAGE_URL_FIELD_NUMBER = 4
@@ -903,7 +875,6 @@ object UpdateConnectionRequest extends scalapb.GeneratedMessageCompanion[dev.aut
   final val ID_FIELD_NUMBER = 10
   final val SCOPES_FIELD_NUMBER = 11
   def of(
-    name: _root_.scala.Predef.String,
     clientId: _root_.scala.Predef.String,
     clientSecret: _root_.scala.Predef.String,
     buttonImageUrl: _root_.scala.Predef.String,
@@ -914,7 +885,6 @@ object UpdateConnectionRequest extends scalapb.GeneratedMessageCompanion[dev.aut
     id: _root_.scala.Predef.String,
     scopes: _root_.scala.Predef.String
   ): _root_.dev.auth3.identity.admin.admin.UpdateConnectionRequest = _root_.dev.auth3.identity.admin.admin.UpdateConnectionRequest(
-    name,
     clientId,
     clientSecret,
     buttonImageUrl,
