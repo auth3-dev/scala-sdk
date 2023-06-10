@@ -116,7 +116,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
       createdAt: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp] = _root_.scala.None,
       updatedAt: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp] = _root_.scala.None,
       mainIdentifier: _root_.scala.Predef.String = "",
-      traitsId: _root_.scala.Predef.String = "",
+      profileId: _root_.scala.Predef.String = "",
       addressesIds: _root_.scala.Seq[_root_.scala.Predef.String] = _root_.scala.Seq.empty,
       credentialsIds: _root_.scala.collection.immutable.Map[_root_.scala.Predef.String, _root_.scala.Predef.String] = _root_.scala.collection.immutable.Map.empty,
       schemaId: _root_.scala.Predef.String = "",
@@ -151,7 +151,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
         };
         
         {
-          val __value = traitsId
+          val __value = profileId
           if (!__value.isEmpty) {
             __size += _root_.com.google.protobuf.CodedOutputStream.computeStringSize(5, __value)
           }
@@ -216,7 +216,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
           }
         };
         {
-          val __v = traitsId
+          val __v = profileId
           if (!__v.isEmpty) {
             _output__.writeString(5, __v)
           }
@@ -253,7 +253,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
       def clearUpdatedAt: Identity = copy(updatedAt = _root_.scala.None)
       def withUpdatedAt(__v: com.google.protobuf.timestamp.Timestamp): Identity = copy(updatedAt = Option(__v))
       def withMainIdentifier(__v: _root_.scala.Predef.String): Identity = copy(mainIdentifier = __v)
-      def withTraitsId(__v: _root_.scala.Predef.String): Identity = copy(traitsId = __v)
+      def withProfileId(__v: _root_.scala.Predef.String): Identity = copy(profileId = __v)
       def clearAddressesIds = copy(addressesIds = _root_.scala.Seq.empty)
       def addAddressesIds(__vs: _root_.scala.Predef.String *): Identity = addAllAddressesIds(__vs)
       def addAllAddressesIds(__vs: Iterable[_root_.scala.Predef.String]): Identity = copy(addressesIds = addressesIds ++ __vs)
@@ -279,7 +279,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
             if (__t != "") __t else null
           }
           case 5 => {
-            val __t = traitsId
+            val __t = profileId
             if (__t != "") __t else null
           }
           case 6 => addressesIds
@@ -301,7 +301,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
           case 2 => createdAt.map(_.toPMessage).getOrElse(_root_.scalapb.descriptors.PEmpty)
           case 3 => updatedAt.map(_.toPMessage).getOrElse(_root_.scalapb.descriptors.PEmpty)
           case 4 => _root_.scalapb.descriptors.PString(mainIdentifier)
-          case 5 => _root_.scalapb.descriptors.PString(traitsId)
+          case 5 => _root_.scalapb.descriptors.PString(profileId)
           case 6 => _root_.scalapb.descriptors.PRepeated(addressesIds.iterator.map(_root_.scalapb.descriptors.PString(_)).toVector)
           case 7 => _root_.scalapb.descriptors.PRepeated(credentialsIds.iterator.map(dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity._typemapper_credentialsIds.toBase(_).toPMessage).toVector)
           case 8 => _root_.scalapb.descriptors.PString(schemaId)
@@ -320,7 +320,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
       var __createdAt: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp] = _root_.scala.None
       var __updatedAt: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp] = _root_.scala.None
       var __mainIdentifier: _root_.scala.Predef.String = ""
-      var __traitsId: _root_.scala.Predef.String = ""
+      var __profileId: _root_.scala.Predef.String = ""
       val __addressesIds: _root_.scala.collection.immutable.VectorBuilder[_root_.scala.Predef.String] = new _root_.scala.collection.immutable.VectorBuilder[_root_.scala.Predef.String]
       val __credentialsIds: _root_.scala.collection.mutable.Builder[(_root_.scala.Predef.String, _root_.scala.Predef.String), _root_.scala.collection.immutable.Map[_root_.scala.Predef.String, _root_.scala.Predef.String]] = _root_.scala.collection.immutable.Map.newBuilder[_root_.scala.Predef.String, _root_.scala.Predef.String]
       var __schemaId: _root_.scala.Predef.String = ""
@@ -340,7 +340,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
           case 34 =>
             __mainIdentifier = _input__.readStringRequireUtf8()
           case 42 =>
-            __traitsId = _input__.readStringRequireUtf8()
+            __profileId = _input__.readStringRequireUtf8()
           case 50 =>
             __addressesIds += _input__.readStringRequireUtf8()
           case 58 =>
@@ -361,7 +361,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
           createdAt = __createdAt,
           updatedAt = __updatedAt,
           mainIdentifier = __mainIdentifier,
-          traitsId = __traitsId,
+          profileId = __profileId,
           addressesIds = __addressesIds.result(),
           credentialsIds = __credentialsIds.result(),
           schemaId = __schemaId,
@@ -377,7 +377,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
           createdAt = __fieldsMap.get(scalaDescriptor.findFieldByNumber(2).get).flatMap(_.as[_root_.scala.Option[com.google.protobuf.timestamp.Timestamp]]),
           updatedAt = __fieldsMap.get(scalaDescriptor.findFieldByNumber(3).get).flatMap(_.as[_root_.scala.Option[com.google.protobuf.timestamp.Timestamp]]),
           mainIdentifier = __fieldsMap.get(scalaDescriptor.findFieldByNumber(4).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
-          traitsId = __fieldsMap.get(scalaDescriptor.findFieldByNumber(5).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
+          profileId = __fieldsMap.get(scalaDescriptor.findFieldByNumber(5).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
           addressesIds = __fieldsMap.get(scalaDescriptor.findFieldByNumber(6).get).map(_.as[_root_.scala.Seq[_root_.scala.Predef.String]]).getOrElse(_root_.scala.Seq.empty),
           credentialsIds = __fieldsMap.get(scalaDescriptor.findFieldByNumber(7).get).map(_.as[_root_.scala.Seq[dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity.CredentialsIdsEntry]]).getOrElse(_root_.scala.Seq.empty).iterator.map(dev.auth3.identity.admin.admin.GetIdentitiesByAttributeResponse.Identity._typemapper_credentialsIds.toCustom(_)).toMap,
           schemaId = __fieldsMap.get(scalaDescriptor.findFieldByNumber(8).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
@@ -410,7 +410,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
       createdAt = _root_.scala.None,
       updatedAt = _root_.scala.None,
       mainIdentifier = "",
-      traitsId = "",
+      profileId = "",
       addressesIds = _root_.scala.Seq.empty,
       credentialsIds = _root_.scala.collection.immutable.Map.empty,
       schemaId = "",
@@ -604,7 +604,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
       def updatedAt: _root_.scalapb.lenses.Lens[UpperPB, com.google.protobuf.timestamp.Timestamp] = field(_.getUpdatedAt)((c_, f_) => c_.copy(updatedAt = Option(f_)))
       def optionalUpdatedAt: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Option[com.google.protobuf.timestamp.Timestamp]] = field(_.updatedAt)((c_, f_) => c_.copy(updatedAt = f_))
       def mainIdentifier: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.mainIdentifier)((c_, f_) => c_.copy(mainIdentifier = f_))
-      def traitsId: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.traitsId)((c_, f_) => c_.copy(traitsId = f_))
+      def profileId: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.profileId)((c_, f_) => c_.copy(profileId = f_))
       def addressesIds: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Seq[_root_.scala.Predef.String]] = field(_.addressesIds)((c_, f_) => c_.copy(addressesIds = f_))
       def credentialsIds: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.collection.immutable.Map[_root_.scala.Predef.String, _root_.scala.Predef.String]] = field(_.credentialsIds)((c_, f_) => c_.copy(credentialsIds = f_))
       def schemaId: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.schemaId)((c_, f_) => c_.copy(schemaId = f_))
@@ -614,7 +614,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
     final val CREATED_AT_FIELD_NUMBER = 2
     final val UPDATED_AT_FIELD_NUMBER = 3
     final val MAIN_IDENTIFIER_FIELD_NUMBER = 4
-    final val TRAITS_ID_FIELD_NUMBER = 5
+    final val PROFILE_ID_FIELD_NUMBER = 5
     final val ADDRESSES_IDS_FIELD_NUMBER = 6
     final val CREDENTIALS_IDS_FIELD_NUMBER = 7
     final val SCHEMA_ID_FIELD_NUMBER = 8
@@ -626,7 +626,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
       createdAt: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp],
       updatedAt: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp],
       mainIdentifier: _root_.scala.Predef.String,
-      traitsId: _root_.scala.Predef.String,
+      profileId: _root_.scala.Predef.String,
       addressesIds: _root_.scala.Seq[_root_.scala.Predef.String],
       credentialsIds: _root_.scala.collection.immutable.Map[_root_.scala.Predef.String, _root_.scala.Predef.String],
       schemaId: _root_.scala.Predef.String,
@@ -636,7 +636,7 @@ object GetIdentitiesByAttributeResponse extends scalapb.GeneratedMessageCompanio
       createdAt,
       updatedAt,
       mainIdentifier,
-      traitsId,
+      profileId,
       addressesIds,
       credentialsIds,
       schemaId,

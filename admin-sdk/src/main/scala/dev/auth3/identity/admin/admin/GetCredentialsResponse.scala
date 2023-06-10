@@ -118,7 +118,7 @@ object GetCredentialsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       updatedAt: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp] = _root_.scala.None,
       identityId: _root_.scala.Predef.String = "",
       `type`: _root_.scala.Int = 0,
-      name: _root_.scala.Predef.String = "",
+      connectionId: _root_.scala.Predef.String = "",
       configured: _root_.scala.Boolean = false,
       unknownFields: _root_.scalapb.UnknownFieldSet = _root_.scalapb.UnknownFieldSet.empty
       ) extends scalapb.GeneratedMessage with scalapb.lenses.Updatable[Credential] {
@@ -157,7 +157,7 @@ object GetCredentialsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
         };
         
         {
-          val __value = name
+          val __value = connectionId
           if (!__value.isEmpty) {
             __size += _root_.com.google.protobuf.CodedOutputStream.computeStringSize(6, __value)
           }
@@ -213,7 +213,7 @@ object GetCredentialsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
           }
         };
         {
-          val __v = name
+          val __v = connectionId
           if (!__v.isEmpty) {
             _output__.writeString(6, __v)
           }
@@ -235,7 +235,7 @@ object GetCredentialsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       def withUpdatedAt(__v: com.google.protobuf.timestamp.Timestamp): Credential = copy(updatedAt = Option(__v))
       def withIdentityId(__v: _root_.scala.Predef.String): Credential = copy(identityId = __v)
       def withType(__v: _root_.scala.Int): Credential = copy(`type` = __v)
-      def withName(__v: _root_.scala.Predef.String): Credential = copy(name = __v)
+      def withConnectionId(__v: _root_.scala.Predef.String): Credential = copy(connectionId = __v)
       def withConfigured(__v: _root_.scala.Boolean): Credential = copy(configured = __v)
       def withUnknownFields(__v: _root_.scalapb.UnknownFieldSet) = copy(unknownFields = __v)
       def discardUnknownFields = copy(unknownFields = _root_.scalapb.UnknownFieldSet.empty)
@@ -256,7 +256,7 @@ object GetCredentialsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
             if (__t != 0) __t else null
           }
           case 6 => {
-            val __t = name
+            val __t = connectionId
             if (__t != "") __t else null
           }
           case 7 => {
@@ -273,7 +273,7 @@ object GetCredentialsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
           case 3 => updatedAt.map(_.toPMessage).getOrElse(_root_.scalapb.descriptors.PEmpty)
           case 4 => _root_.scalapb.descriptors.PString(identityId)
           case 5 => _root_.scalapb.descriptors.PInt(`type`)
-          case 6 => _root_.scalapb.descriptors.PString(name)
+          case 6 => _root_.scalapb.descriptors.PString(connectionId)
           case 7 => _root_.scalapb.descriptors.PBoolean(configured)
         }
       }
@@ -290,7 +290,7 @@ object GetCredentialsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       var __updatedAt: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp] = _root_.scala.None
       var __identityId: _root_.scala.Predef.String = ""
       var __type: _root_.scala.Int = 0
-      var __name: _root_.scala.Predef.String = ""
+      var __connectionId: _root_.scala.Predef.String = ""
       var __configured: _root_.scala.Boolean = false
       var `_unknownFields__`: _root_.scalapb.UnknownFieldSet.Builder = null
       var _done__ = false
@@ -309,7 +309,7 @@ object GetCredentialsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
           case 40 =>
             __type = _input__.readInt32()
           case 50 =>
-            __name = _input__.readStringRequireUtf8()
+            __connectionId = _input__.readStringRequireUtf8()
           case 56 =>
             __configured = _input__.readBool()
           case tag =>
@@ -325,7 +325,7 @@ object GetCredentialsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
           updatedAt = __updatedAt,
           identityId = __identityId,
           `type` = __type,
-          name = __name,
+          connectionId = __connectionId,
           configured = __configured,
           unknownFields = if (_unknownFields__ == null) _root_.scalapb.UnknownFieldSet.empty else _unknownFields__.result()
       )
@@ -339,7 +339,7 @@ object GetCredentialsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
           updatedAt = __fieldsMap.get(scalaDescriptor.findFieldByNumber(3).get).flatMap(_.as[_root_.scala.Option[com.google.protobuf.timestamp.Timestamp]]),
           identityId = __fieldsMap.get(scalaDescriptor.findFieldByNumber(4).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
           `type` = __fieldsMap.get(scalaDescriptor.findFieldByNumber(5).get).map(_.as[_root_.scala.Int]).getOrElse(0),
-          name = __fieldsMap.get(scalaDescriptor.findFieldByNumber(6).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
+          connectionId = __fieldsMap.get(scalaDescriptor.findFieldByNumber(6).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
           configured = __fieldsMap.get(scalaDescriptor.findFieldByNumber(7).get).map(_.as[_root_.scala.Boolean]).getOrElse(false)
         )
       case _ => throw new RuntimeException("Expected PMessage")
@@ -362,7 +362,7 @@ object GetCredentialsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       updatedAt = _root_.scala.None,
       identityId = "",
       `type` = 0,
-      name = "",
+      connectionId = "",
       configured = false
     )
     implicit class CredentialLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.GetCredentialsResponse.Credential]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, dev.auth3.identity.admin.admin.GetCredentialsResponse.Credential](_l) {
@@ -373,7 +373,7 @@ object GetCredentialsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       def optionalUpdatedAt: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Option[com.google.protobuf.timestamp.Timestamp]] = field(_.updatedAt)((c_, f_) => c_.copy(updatedAt = f_))
       def identityId: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.identityId)((c_, f_) => c_.copy(identityId = f_))
       def `type`: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Int] = field(_.`type`)((c_, f_) => c_.copy(`type` = f_))
-      def name: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.name)((c_, f_) => c_.copy(name = f_))
+      def connectionId: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.connectionId)((c_, f_) => c_.copy(connectionId = f_))
       def configured: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Boolean] = field(_.configured)((c_, f_) => c_.copy(configured = f_))
     }
     final val CREDENTIAL_ID_FIELD_NUMBER = 1
@@ -381,7 +381,7 @@ object GetCredentialsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
     final val UPDATED_AT_FIELD_NUMBER = 3
     final val IDENTITY_ID_FIELD_NUMBER = 4
     final val TYPE_FIELD_NUMBER = 5
-    final val NAME_FIELD_NUMBER = 6
+    final val CONNECTION_ID_FIELD_NUMBER = 6
     final val CONFIGURED_FIELD_NUMBER = 7
     def of(
       credentialId: _root_.scala.Predef.String,
@@ -389,7 +389,7 @@ object GetCredentialsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       updatedAt: _root_.scala.Option[com.google.protobuf.timestamp.Timestamp],
       identityId: _root_.scala.Predef.String,
       `type`: _root_.scala.Int,
-      name: _root_.scala.Predef.String,
+      connectionId: _root_.scala.Predef.String,
       configured: _root_.scala.Boolean
     ): _root_.dev.auth3.identity.admin.admin.GetCredentialsResponse.Credential = _root_.dev.auth3.identity.admin.admin.GetCredentialsResponse.Credential(
       credentialId,
@@ -397,7 +397,7 @@ object GetCredentialsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       updatedAt,
       identityId,
       `type`,
-      name,
+      connectionId,
       configured
     )
     // @@protoc_insertion_point(GeneratedMessageCompanion[depot.devtools.auth.v0.identity.admin.GetCredentialsResponse.Credential])

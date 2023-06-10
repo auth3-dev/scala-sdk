@@ -6,9 +6,9 @@
 package dev.auth3.identity.admin.admin
 
 @SerialVersionUID(0L)
-final case class UpdateTraitsResponse(
+final case class UpdateProfileResponse(
     unknownFields: _root_.scalapb.UnknownFieldSet = _root_.scalapb.UnknownFieldSet.empty
-    ) extends scalapb.GeneratedMessage with scalapb.lenses.Updatable[UpdateTraitsResponse] {
+    ) extends scalapb.GeneratedMessage with scalapb.lenses.Updatable[UpdateProfileResponse] {
     @transient
     private[this] var __serializedSizeMemoized: _root_.scala.Int = 0
     private[this] def __computeSerializedSize(): _root_.scala.Int = {
@@ -33,13 +33,13 @@ final case class UpdateTraitsResponse(
     def getFieldByNumber(__fieldNumber: _root_.scala.Int): _root_.scala.Any = throw new MatchError(__fieldNumber)
     def getField(__field: _root_.scalapb.descriptors.FieldDescriptor): _root_.scalapb.descriptors.PValue = throw new MatchError(__field)
     def toProtoString: _root_.scala.Predef.String = _root_.scalapb.TextFormat.printToUnicodeString(this)
-    def companion: dev.auth3.identity.admin.admin.UpdateTraitsResponse.type = dev.auth3.identity.admin.admin.UpdateTraitsResponse
-    // @@protoc_insertion_point(GeneratedMessage[depot.devtools.auth.v0.identity.admin.UpdateTraitsResponse])
+    def companion: dev.auth3.identity.admin.admin.UpdateProfileResponse.type = dev.auth3.identity.admin.admin.UpdateProfileResponse
+    // @@protoc_insertion_point(GeneratedMessage[depot.devtools.auth.v0.identity.admin.UpdateProfileResponse])
 }
 
-object UpdateTraitsResponse extends scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.UpdateTraitsResponse] {
-  implicit def messageCompanion: scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.UpdateTraitsResponse] = this
-  def parseFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): dev.auth3.identity.admin.admin.UpdateTraitsResponse = {
+object UpdateProfileResponse extends scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.UpdateProfileResponse] {
+  implicit def messageCompanion: scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.UpdateProfileResponse] = this
+  def parseFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): dev.auth3.identity.admin.admin.UpdateProfileResponse = {
     var `_unknownFields__`: _root_.scalapb.UnknownFieldSet.Builder = null
     var _done__ = false
     while (!_done__) {
@@ -53,14 +53,14 @@ object UpdateTraitsResponse extends scalapb.GeneratedMessageCompanion[dev.auth3.
           _unknownFields__.parseField(tag, _input__)
       }
     }
-    dev.auth3.identity.admin.admin.UpdateTraitsResponse(
+    dev.auth3.identity.admin.admin.UpdateProfileResponse(
         unknownFields = if (_unknownFields__ == null) _root_.scalapb.UnknownFieldSet.empty else _unknownFields__.result()
     )
   }
-  implicit def messageReads: _root_.scalapb.descriptors.Reads[dev.auth3.identity.admin.admin.UpdateTraitsResponse] = _root_.scalapb.descriptors.Reads{
+  implicit def messageReads: _root_.scalapb.descriptors.Reads[dev.auth3.identity.admin.admin.UpdateProfileResponse] = _root_.scalapb.descriptors.Reads{
     case _root_.scalapb.descriptors.PMessage(__fieldsMap) =>
       _root_.scala.Predef.require(__fieldsMap.keys.forall(_.containingMessage eq scalaDescriptor), "FieldDescriptor does not match message type.")
-      dev.auth3.identity.admin.admin.UpdateTraitsResponse(
+      dev.auth3.identity.admin.admin.UpdateProfileResponse(
       )
     case _ => throw new RuntimeException("Expected PMessage")
   }
@@ -69,12 +69,12 @@ object UpdateTraitsResponse extends scalapb.GeneratedMessageCompanion[dev.auth3.
   def messageCompanionForFieldNumber(__number: _root_.scala.Int): _root_.scalapb.GeneratedMessageCompanion[_] = throw new MatchError(__number)
   lazy val nestedMessagesCompanions: Seq[_root_.scalapb.GeneratedMessageCompanion[_ <: _root_.scalapb.GeneratedMessage]] = Seq.empty
   def enumCompanionForFieldNumber(__fieldNumber: _root_.scala.Int): _root_.scalapb.GeneratedEnumCompanion[_] = throw new MatchError(__fieldNumber)
-  lazy val defaultInstance = dev.auth3.identity.admin.admin.UpdateTraitsResponse(
+  lazy val defaultInstance = dev.auth3.identity.admin.admin.UpdateProfileResponse(
   )
-  implicit class UpdateTraitsResponseLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.UpdateTraitsResponse]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, dev.auth3.identity.admin.admin.UpdateTraitsResponse](_l) {
+  implicit class UpdateProfileResponseLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.UpdateProfileResponse]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, dev.auth3.identity.admin.admin.UpdateProfileResponse](_l) {
   }
   def of(
-  ): _root_.dev.auth3.identity.admin.admin.UpdateTraitsResponse = _root_.dev.auth3.identity.admin.admin.UpdateTraitsResponse(
+  ): _root_.dev.auth3.identity.admin.admin.UpdateProfileResponse = _root_.dev.auth3.identity.admin.admin.UpdateProfileResponse(
   )
-  // @@protoc_insertion_point(GeneratedMessageCompanion[depot.devtools.auth.v0.identity.admin.UpdateTraitsResponse])
+  // @@protoc_insertion_point(GeneratedMessageCompanion[depot.devtools.auth.v0.identity.admin.UpdateProfileResponse])
 }

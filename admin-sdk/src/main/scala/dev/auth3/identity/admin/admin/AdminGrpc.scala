@@ -101,23 +101,23 @@ object AdminGrpc {
       .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(9)))
       .build()
   
-  val METHOD_GET_TRAITS: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetTraitsRequest, dev.auth3.identity.admin.admin.GetTraitsResponse] =
+  val METHOD_GET_PROFILE: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.GetProfileRequest, dev.auth3.identity.admin.admin.GetProfileResponse] =
     _root_.io.grpc.MethodDescriptor.newBuilder()
       .setType(_root_.io.grpc.MethodDescriptor.MethodType.UNARY)
-      .setFullMethodName(_root_.io.grpc.MethodDescriptor.generateFullMethodName("depot.devtools.auth.v0.identity.admin.Admin", "GetTraits"))
+      .setFullMethodName(_root_.io.grpc.MethodDescriptor.generateFullMethodName("depot.devtools.auth.v0.identity.admin.Admin", "GetProfile"))
       .setSampledToLocalTracing(true)
-      .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetTraitsRequest])
-      .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetTraitsResponse])
+      .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetProfileRequest])
+      .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.GetProfileResponse])
       .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(10)))
       .build()
   
-  val METHOD_UPDATE_TRAITS: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.UpdateTraitsRequest, dev.auth3.identity.admin.admin.UpdateTraitsResponse] =
+  val METHOD_UPDATE_PROFILE: _root_.io.grpc.MethodDescriptor[dev.auth3.identity.admin.admin.UpdateProfileRequest, dev.auth3.identity.admin.admin.UpdateProfileResponse] =
     _root_.io.grpc.MethodDescriptor.newBuilder()
       .setType(_root_.io.grpc.MethodDescriptor.MethodType.UNARY)
-      .setFullMethodName(_root_.io.grpc.MethodDescriptor.generateFullMethodName("depot.devtools.auth.v0.identity.admin.Admin", "UpdateTraits"))
+      .setFullMethodName(_root_.io.grpc.MethodDescriptor.generateFullMethodName("depot.devtools.auth.v0.identity.admin.Admin", "UpdateProfile"))
       .setSampledToLocalTracing(true)
-      .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateTraitsRequest])
-      .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateTraitsResponse])
+      .setRequestMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateProfileRequest])
+      .setResponseMarshaller(_root_.scalapb.grpc.Marshaller.forMessage[dev.auth3.identity.admin.admin.UpdateProfileResponse])
       .setSchemaDescriptor(_root_.scalapb.grpc.ConcreteProtoMethodDescriptorSupplier.fromMethodDescriptor(dev.auth3.identity.admin.admin.AdminProto.javaDescriptor.getServices().get(0).getMethods().get(11)))
       .build()
   
@@ -344,8 +344,8 @@ object AdminGrpc {
       .addMethod(METHOD_GET_ADDRESSES)
       .addMethod(METHOD_GET_ADDRESS)
       .addMethod(METHOD_UPDATE_ADDRESS)
-      .addMethod(METHOD_GET_TRAITS)
-      .addMethod(METHOD_UPDATE_TRAITS)
+      .addMethod(METHOD_GET_PROFILE)
+      .addMethod(METHOD_UPDATE_PROFILE)
       .addMethod(METHOD_GET_CREDENTIALS)
       .addMethod(METHOD_UPDATE_CREDENTIAL)
       .addMethod(METHOD_GET_IDENTITY_LOGIN_ATTEMPTS)
@@ -381,8 +381,8 @@ object AdminGrpc {
     def getAddresses(request: dev.auth3.identity.admin.admin.GetAddressesRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetAddressesResponse]
     def getAddress(request: dev.auth3.identity.admin.admin.GetAddressRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetAddressResponse]
     def updateAddress(request: dev.auth3.identity.admin.admin.UpdateAddressRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.UpdateAddressResponse]
-    def getTraits(request: dev.auth3.identity.admin.admin.GetTraitsRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetTraitsResponse]
-    def updateTraits(request: dev.auth3.identity.admin.admin.UpdateTraitsRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.UpdateTraitsResponse]
+    def getProfile(request: dev.auth3.identity.admin.admin.GetProfileRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetProfileResponse]
+    def updateProfile(request: dev.auth3.identity.admin.admin.UpdateProfileRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.UpdateProfileResponse]
     def getCredentials(request: dev.auth3.identity.admin.admin.GetCredentialsRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetCredentialsResponse]
     def updateCredential(request: dev.auth3.identity.admin.admin.UpdateCredentialRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.UpdateCredentialResponse]
     def getIdentityLoginAttempts(request: dev.auth3.identity.admin.admin.GetIdentityLoginAttemptsRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetIdentityLoginAttemptsResponse]
@@ -483,17 +483,17 @@ object AdminGrpc {
               executionContext)
         }))
       .addMethod(
-        METHOD_GET_TRAITS,
-        _root_.io.grpc.stub.ServerCalls.asyncUnaryCall(new _root_.io.grpc.stub.ServerCalls.UnaryMethod[dev.auth3.identity.admin.admin.GetTraitsRequest, dev.auth3.identity.admin.admin.GetTraitsResponse] {
-          override def invoke(request: dev.auth3.identity.admin.admin.GetTraitsRequest, observer: _root_.io.grpc.stub.StreamObserver[dev.auth3.identity.admin.admin.GetTraitsResponse]): _root_.scala.Unit =
-            serviceImpl.getTraits(request).onComplete(scalapb.grpc.Grpc.completeObserver(observer))(
+        METHOD_GET_PROFILE,
+        _root_.io.grpc.stub.ServerCalls.asyncUnaryCall(new _root_.io.grpc.stub.ServerCalls.UnaryMethod[dev.auth3.identity.admin.admin.GetProfileRequest, dev.auth3.identity.admin.admin.GetProfileResponse] {
+          override def invoke(request: dev.auth3.identity.admin.admin.GetProfileRequest, observer: _root_.io.grpc.stub.StreamObserver[dev.auth3.identity.admin.admin.GetProfileResponse]): _root_.scala.Unit =
+            serviceImpl.getProfile(request).onComplete(scalapb.grpc.Grpc.completeObserver(observer))(
               executionContext)
         }))
       .addMethod(
-        METHOD_UPDATE_TRAITS,
-        _root_.io.grpc.stub.ServerCalls.asyncUnaryCall(new _root_.io.grpc.stub.ServerCalls.UnaryMethod[dev.auth3.identity.admin.admin.UpdateTraitsRequest, dev.auth3.identity.admin.admin.UpdateTraitsResponse] {
-          override def invoke(request: dev.auth3.identity.admin.admin.UpdateTraitsRequest, observer: _root_.io.grpc.stub.StreamObserver[dev.auth3.identity.admin.admin.UpdateTraitsResponse]): _root_.scala.Unit =
-            serviceImpl.updateTraits(request).onComplete(scalapb.grpc.Grpc.completeObserver(observer))(
+        METHOD_UPDATE_PROFILE,
+        _root_.io.grpc.stub.ServerCalls.asyncUnaryCall(new _root_.io.grpc.stub.ServerCalls.UnaryMethod[dev.auth3.identity.admin.admin.UpdateProfileRequest, dev.auth3.identity.admin.admin.UpdateProfileResponse] {
+          override def invoke(request: dev.auth3.identity.admin.admin.UpdateProfileRequest, observer: _root_.io.grpc.stub.StreamObserver[dev.auth3.identity.admin.admin.UpdateProfileResponse]): _root_.scala.Unit =
+            serviceImpl.updateProfile(request).onComplete(scalapb.grpc.Grpc.completeObserver(observer))(
               executionContext)
         }))
       .addMethod(
@@ -658,8 +658,8 @@ object AdminGrpc {
     def getAddresses(request: dev.auth3.identity.admin.admin.GetAddressesRequest): dev.auth3.identity.admin.admin.GetAddressesResponse
     def getAddress(request: dev.auth3.identity.admin.admin.GetAddressRequest): dev.auth3.identity.admin.admin.GetAddressResponse
     def updateAddress(request: dev.auth3.identity.admin.admin.UpdateAddressRequest): dev.auth3.identity.admin.admin.UpdateAddressResponse
-    def getTraits(request: dev.auth3.identity.admin.admin.GetTraitsRequest): dev.auth3.identity.admin.admin.GetTraitsResponse
-    def updateTraits(request: dev.auth3.identity.admin.admin.UpdateTraitsRequest): dev.auth3.identity.admin.admin.UpdateTraitsResponse
+    def getProfile(request: dev.auth3.identity.admin.admin.GetProfileRequest): dev.auth3.identity.admin.admin.GetProfileResponse
+    def updateProfile(request: dev.auth3.identity.admin.admin.UpdateProfileRequest): dev.auth3.identity.admin.admin.UpdateProfileResponse
     def getCredentials(request: dev.auth3.identity.admin.admin.GetCredentialsRequest): dev.auth3.identity.admin.admin.GetCredentialsResponse
     def updateCredential(request: dev.auth3.identity.admin.admin.UpdateCredentialRequest): dev.auth3.identity.admin.admin.UpdateCredentialResponse
     def getIdentityLoginAttempts(request: dev.auth3.identity.admin.admin.GetIdentityLoginAttemptsRequest): dev.auth3.identity.admin.admin.GetIdentityLoginAttemptsResponse
@@ -724,12 +724,12 @@ object AdminGrpc {
       _root_.scalapb.grpc.ClientCalls.blockingUnaryCall(channel, METHOD_UPDATE_ADDRESS, options, request)
     }
     
-    override def getTraits(request: dev.auth3.identity.admin.admin.GetTraitsRequest): dev.auth3.identity.admin.admin.GetTraitsResponse = {
-      _root_.scalapb.grpc.ClientCalls.blockingUnaryCall(channel, METHOD_GET_TRAITS, options, request)
+    override def getProfile(request: dev.auth3.identity.admin.admin.GetProfileRequest): dev.auth3.identity.admin.admin.GetProfileResponse = {
+      _root_.scalapb.grpc.ClientCalls.blockingUnaryCall(channel, METHOD_GET_PROFILE, options, request)
     }
     
-    override def updateTraits(request: dev.auth3.identity.admin.admin.UpdateTraitsRequest): dev.auth3.identity.admin.admin.UpdateTraitsResponse = {
-      _root_.scalapb.grpc.ClientCalls.blockingUnaryCall(channel, METHOD_UPDATE_TRAITS, options, request)
+    override def updateProfile(request: dev.auth3.identity.admin.admin.UpdateProfileRequest): dev.auth3.identity.admin.admin.UpdateProfileResponse = {
+      _root_.scalapb.grpc.ClientCalls.blockingUnaryCall(channel, METHOD_UPDATE_PROFILE, options, request)
     }
     
     override def getCredentials(request: dev.auth3.identity.admin.admin.GetCredentialsRequest): dev.auth3.identity.admin.admin.GetCredentialsResponse = {
@@ -860,12 +860,12 @@ object AdminGrpc {
       _root_.scalapb.grpc.ClientCalls.asyncUnaryCall(channel, METHOD_UPDATE_ADDRESS, options, request)
     }
     
-    override def getTraits(request: dev.auth3.identity.admin.admin.GetTraitsRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetTraitsResponse] = {
-      _root_.scalapb.grpc.ClientCalls.asyncUnaryCall(channel, METHOD_GET_TRAITS, options, request)
+    override def getProfile(request: dev.auth3.identity.admin.admin.GetProfileRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetProfileResponse] = {
+      _root_.scalapb.grpc.ClientCalls.asyncUnaryCall(channel, METHOD_GET_PROFILE, options, request)
     }
     
-    override def updateTraits(request: dev.auth3.identity.admin.admin.UpdateTraitsRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.UpdateTraitsResponse] = {
-      _root_.scalapb.grpc.ClientCalls.asyncUnaryCall(channel, METHOD_UPDATE_TRAITS, options, request)
+    override def updateProfile(request: dev.auth3.identity.admin.admin.UpdateProfileRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.UpdateProfileResponse] = {
+      _root_.scalapb.grpc.ClientCalls.asyncUnaryCall(channel, METHOD_UPDATE_PROFILE, options, request)
     }
     
     override def getCredentials(request: dev.auth3.identity.admin.admin.GetCredentialsRequest): scala.concurrent.Future[dev.auth3.identity.admin.admin.GetCredentialsResponse] = {

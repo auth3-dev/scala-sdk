@@ -700,7 +700,7 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
   }
   @SerialVersionUID(0L)
   final case class Connection(
-      name: _root_.scala.Predef.String = "",
+      id: _root_.scala.Predef.String = "",
       clientId: _root_.scala.Predef.String = "",
       clientSecret: _root_.scala.Predef.String = "",
       buttonImageUrl: _root_.scala.Predef.String = "",
@@ -708,7 +708,6 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       oidcDiscoveryUrl: _root_.scala.Predef.String = "",
       mfa: _root_.scala.Seq[_root_.scala.Predef.String] = _root_.scala.Seq.empty,
       `type`: dev.auth3.identity.admin.admin.GetConnectionsResponse.Types = dev.auth3.identity.admin.admin.GetConnectionsResponse.Types.UNSET,
-      id: _root_.scala.Predef.String = "",
       scopes: _root_.scala.Predef.String = "",
       purpose: dev.auth3.identity.admin.admin.GetConnectionsResponse.Purposes = dev.auth3.identity.admin.admin.GetConnectionsResponse.Purposes.PURPOSE_UNKNOWN,
       unknownFields: _root_.scalapb.UnknownFieldSet = _root_.scalapb.UnknownFieldSet.empty
@@ -719,7 +718,7 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
         var __size = 0
         
         {
-          val __value = name
+          val __value = id
           if (!__value.isEmpty) {
             __size += _root_.com.google.protobuf.CodedOutputStream.computeStringSize(1, __value)
           }
@@ -772,23 +771,16 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
         };
         
         {
-          val __value = id
+          val __value = scopes
           if (!__value.isEmpty) {
             __size += _root_.com.google.protobuf.CodedOutputStream.computeStringSize(10, __value)
           }
         };
         
         {
-          val __value = scopes
-          if (!__value.isEmpty) {
-            __size += _root_.com.google.protobuf.CodedOutputStream.computeStringSize(11, __value)
-          }
-        };
-        
-        {
           val __value = purpose.value
           if (__value != 0) {
-            __size += _root_.com.google.protobuf.CodedOutputStream.computeEnumSize(12, __value)
+            __size += _root_.com.google.protobuf.CodedOutputStream.computeEnumSize(11, __value)
           }
         };
         __size += unknownFields.serializedSize
@@ -805,7 +797,7 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       }
       def writeTo(`_output__`: _root_.com.google.protobuf.CodedOutputStream): _root_.scala.Unit = {
         {
-          val __v = name
+          val __v = id
           if (!__v.isEmpty) {
             _output__.writeString(1, __v)
           }
@@ -851,26 +843,20 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
           }
         };
         {
-          val __v = id
+          val __v = scopes
           if (!__v.isEmpty) {
             _output__.writeString(10, __v)
           }
         };
         {
-          val __v = scopes
-          if (!__v.isEmpty) {
-            _output__.writeString(11, __v)
-          }
-        };
-        {
           val __v = purpose.value
           if (__v != 0) {
-            _output__.writeEnum(12, __v)
+            _output__.writeEnum(11, __v)
           }
         };
         unknownFields.writeTo(_output__)
       }
-      def withName(__v: _root_.scala.Predef.String): Connection = copy(name = __v)
+      def withId(__v: _root_.scala.Predef.String): Connection = copy(id = __v)
       def withClientId(__v: _root_.scala.Predef.String): Connection = copy(clientId = __v)
       def withClientSecret(__v: _root_.scala.Predef.String): Connection = copy(clientSecret = __v)
       def withButtonImageUrl(__v: _root_.scala.Predef.String): Connection = copy(buttonImageUrl = __v)
@@ -881,7 +867,6 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       def addAllMfa(__vs: Iterable[_root_.scala.Predef.String]): Connection = copy(mfa = mfa ++ __vs)
       def withMfa(__v: _root_.scala.Seq[_root_.scala.Predef.String]): Connection = copy(mfa = __v)
       def withType(__v: dev.auth3.identity.admin.admin.GetConnectionsResponse.Types): Connection = copy(`type` = __v)
-      def withId(__v: _root_.scala.Predef.String): Connection = copy(id = __v)
       def withScopes(__v: _root_.scala.Predef.String): Connection = copy(scopes = __v)
       def withPurpose(__v: dev.auth3.identity.admin.admin.GetConnectionsResponse.Purposes): Connection = copy(purpose = __v)
       def withUnknownFields(__v: _root_.scalapb.UnknownFieldSet) = copy(unknownFields = __v)
@@ -889,7 +874,7 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       def getFieldByNumber(__fieldNumber: _root_.scala.Int): _root_.scala.Any = {
         (__fieldNumber: @_root_.scala.unchecked) match {
           case 1 => {
-            val __t = name
+            val __t = id
             if (__t != "") __t else null
           }
           case 2 => {
@@ -918,14 +903,10 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
             if (__t.getNumber() != 0) __t else null
           }
           case 10 => {
-            val __t = id
-            if (__t != "") __t else null
-          }
-          case 11 => {
             val __t = scopes
             if (__t != "") __t else null
           }
-          case 12 => {
+          case 11 => {
             val __t = purpose.javaValueDescriptor
             if (__t.getNumber() != 0) __t else null
           }
@@ -934,7 +915,7 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       def getField(__field: _root_.scalapb.descriptors.FieldDescriptor): _root_.scalapb.descriptors.PValue = {
         _root_.scala.Predef.require(__field.containingMessage eq companion.scalaDescriptor)
         (__field.number: @_root_.scala.unchecked) match {
-          case 1 => _root_.scalapb.descriptors.PString(name)
+          case 1 => _root_.scalapb.descriptors.PString(id)
           case 2 => _root_.scalapb.descriptors.PString(clientId)
           case 3 => _root_.scalapb.descriptors.PString(clientSecret)
           case 4 => _root_.scalapb.descriptors.PString(buttonImageUrl)
@@ -942,9 +923,8 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
           case 7 => _root_.scalapb.descriptors.PString(oidcDiscoveryUrl)
           case 8 => _root_.scalapb.descriptors.PRepeated(mfa.iterator.map(_root_.scalapb.descriptors.PString(_)).toVector)
           case 9 => _root_.scalapb.descriptors.PEnum(`type`.scalaValueDescriptor)
-          case 10 => _root_.scalapb.descriptors.PString(id)
-          case 11 => _root_.scalapb.descriptors.PString(scopes)
-          case 12 => _root_.scalapb.descriptors.PEnum(purpose.scalaValueDescriptor)
+          case 10 => _root_.scalapb.descriptors.PString(scopes)
+          case 11 => _root_.scalapb.descriptors.PEnum(purpose.scalaValueDescriptor)
         }
       }
       def toProtoString: _root_.scala.Predef.String = _root_.scalapb.TextFormat.printToUnicodeString(this)
@@ -955,7 +935,7 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
   object Connection extends scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetConnectionsResponse.Connection] {
     implicit def messageCompanion: scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetConnectionsResponse.Connection] = this
     def parseFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): dev.auth3.identity.admin.admin.GetConnectionsResponse.Connection = {
-      var __name: _root_.scala.Predef.String = ""
+      var __id: _root_.scala.Predef.String = ""
       var __clientId: _root_.scala.Predef.String = ""
       var __clientSecret: _root_.scala.Predef.String = ""
       var __buttonImageUrl: _root_.scala.Predef.String = ""
@@ -963,7 +943,6 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       var __oidcDiscoveryUrl: _root_.scala.Predef.String = ""
       val __mfa: _root_.scala.collection.immutable.VectorBuilder[_root_.scala.Predef.String] = new _root_.scala.collection.immutable.VectorBuilder[_root_.scala.Predef.String]
       var __type: dev.auth3.identity.admin.admin.GetConnectionsResponse.Types = dev.auth3.identity.admin.admin.GetConnectionsResponse.Types.UNSET
-      var __id: _root_.scala.Predef.String = ""
       var __scopes: _root_.scala.Predef.String = ""
       var __purpose: dev.auth3.identity.admin.admin.GetConnectionsResponse.Purposes = dev.auth3.identity.admin.admin.GetConnectionsResponse.Purposes.PURPOSE_UNKNOWN
       var `_unknownFields__`: _root_.scalapb.UnknownFieldSet.Builder = null
@@ -973,7 +952,7 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
         _tag__ match {
           case 0 => _done__ = true
           case 10 =>
-            __name = _input__.readStringRequireUtf8()
+            __id = _input__.readStringRequireUtf8()
           case 18 =>
             __clientId = _input__.readStringRequireUtf8()
           case 26 =>
@@ -989,10 +968,8 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
           case 72 =>
             __type = dev.auth3.identity.admin.admin.GetConnectionsResponse.Types.fromValue(_input__.readEnum())
           case 82 =>
-            __id = _input__.readStringRequireUtf8()
-          case 90 =>
             __scopes = _input__.readStringRequireUtf8()
-          case 96 =>
+          case 88 =>
             __purpose = dev.auth3.identity.admin.admin.GetConnectionsResponse.Purposes.fromValue(_input__.readEnum())
           case tag =>
             if (_unknownFields__ == null) {
@@ -1002,7 +979,7 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
         }
       }
       dev.auth3.identity.admin.admin.GetConnectionsResponse.Connection(
-          name = __name,
+          id = __id,
           clientId = __clientId,
           clientSecret = __clientSecret,
           buttonImageUrl = __buttonImageUrl,
@@ -1010,7 +987,6 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
           oidcDiscoveryUrl = __oidcDiscoveryUrl,
           mfa = __mfa.result(),
           `type` = __type,
-          id = __id,
           scopes = __scopes,
           purpose = __purpose,
           unknownFields = if (_unknownFields__ == null) _root_.scalapb.UnknownFieldSet.empty else _unknownFields__.result()
@@ -1020,7 +996,7 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       case _root_.scalapb.descriptors.PMessage(__fieldsMap) =>
         _root_.scala.Predef.require(__fieldsMap.keys.forall(_.containingMessage eq scalaDescriptor), "FieldDescriptor does not match message type.")
         dev.auth3.identity.admin.admin.GetConnectionsResponse.Connection(
-          name = __fieldsMap.get(scalaDescriptor.findFieldByNumber(1).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
+          id = __fieldsMap.get(scalaDescriptor.findFieldByNumber(1).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
           clientId = __fieldsMap.get(scalaDescriptor.findFieldByNumber(2).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
           clientSecret = __fieldsMap.get(scalaDescriptor.findFieldByNumber(3).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
           buttonImageUrl = __fieldsMap.get(scalaDescriptor.findFieldByNumber(4).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
@@ -1028,9 +1004,8 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
           oidcDiscoveryUrl = __fieldsMap.get(scalaDescriptor.findFieldByNumber(7).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
           mfa = __fieldsMap.get(scalaDescriptor.findFieldByNumber(8).get).map(_.as[_root_.scala.Seq[_root_.scala.Predef.String]]).getOrElse(_root_.scala.Seq.empty),
           `type` = dev.auth3.identity.admin.admin.GetConnectionsResponse.Types.fromValue(__fieldsMap.get(scalaDescriptor.findFieldByNumber(9).get).map(_.as[_root_.scalapb.descriptors.EnumValueDescriptor]).getOrElse(dev.auth3.identity.admin.admin.GetConnectionsResponse.Types.UNSET.scalaValueDescriptor).number),
-          id = __fieldsMap.get(scalaDescriptor.findFieldByNumber(10).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
-          scopes = __fieldsMap.get(scalaDescriptor.findFieldByNumber(11).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
-          purpose = dev.auth3.identity.admin.admin.GetConnectionsResponse.Purposes.fromValue(__fieldsMap.get(scalaDescriptor.findFieldByNumber(12).get).map(_.as[_root_.scalapb.descriptors.EnumValueDescriptor]).getOrElse(dev.auth3.identity.admin.admin.GetConnectionsResponse.Purposes.PURPOSE_UNKNOWN.scalaValueDescriptor).number)
+          scopes = __fieldsMap.get(scalaDescriptor.findFieldByNumber(10).get).map(_.as[_root_.scala.Predef.String]).getOrElse(""),
+          purpose = dev.auth3.identity.admin.admin.GetConnectionsResponse.Purposes.fromValue(__fieldsMap.get(scalaDescriptor.findFieldByNumber(11).get).map(_.as[_root_.scalapb.descriptors.EnumValueDescriptor]).getOrElse(dev.auth3.identity.admin.admin.GetConnectionsResponse.Purposes.PURPOSE_UNKNOWN.scalaValueDescriptor).number)
         )
       case _ => throw new RuntimeException("Expected PMessage")
     }
@@ -1042,11 +1017,11 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       (__fieldNumber: @_root_.scala.unchecked) match {
         case 6 => dev.auth3.identity.admin.admin.GetConnectionsResponse.Providers
         case 9 => dev.auth3.identity.admin.admin.GetConnectionsResponse.Types
-        case 12 => dev.auth3.identity.admin.admin.GetConnectionsResponse.Purposes
+        case 11 => dev.auth3.identity.admin.admin.GetConnectionsResponse.Purposes
       }
     }
     lazy val defaultInstance = dev.auth3.identity.admin.admin.GetConnectionsResponse.Connection(
-      name = "",
+      id = "",
       clientId = "",
       clientSecret = "",
       buttonImageUrl = "",
@@ -1054,12 +1029,11 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       oidcDiscoveryUrl = "",
       mfa = _root_.scala.Seq.empty,
       `type` = dev.auth3.identity.admin.admin.GetConnectionsResponse.Types.UNSET,
-      id = "",
       scopes = "",
       purpose = dev.auth3.identity.admin.admin.GetConnectionsResponse.Purposes.PURPOSE_UNKNOWN
     )
     implicit class ConnectionLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.GetConnectionsResponse.Connection]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, dev.auth3.identity.admin.admin.GetConnectionsResponse.Connection](_l) {
-      def name: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.name)((c_, f_) => c_.copy(name = f_))
+      def id: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.id)((c_, f_) => c_.copy(id = f_))
       def clientId: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.clientId)((c_, f_) => c_.copy(clientId = f_))
       def clientSecret: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.clientSecret)((c_, f_) => c_.copy(clientSecret = f_))
       def buttonImageUrl: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.buttonImageUrl)((c_, f_) => c_.copy(buttonImageUrl = f_))
@@ -1067,11 +1041,10 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       def oidcDiscoveryUrl: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.oidcDiscoveryUrl)((c_, f_) => c_.copy(oidcDiscoveryUrl = f_))
       def mfa: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Seq[_root_.scala.Predef.String]] = field(_.mfa)((c_, f_) => c_.copy(mfa = f_))
       def `type`: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.GetConnectionsResponse.Types] = field(_.`type`)((c_, f_) => c_.copy(`type` = f_))
-      def id: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.id)((c_, f_) => c_.copy(id = f_))
       def scopes: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.scopes)((c_, f_) => c_.copy(scopes = f_))
       def purpose: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.GetConnectionsResponse.Purposes] = field(_.purpose)((c_, f_) => c_.copy(purpose = f_))
     }
-    final val NAME_FIELD_NUMBER = 1
+    final val ID_FIELD_NUMBER = 1
     final val CLIENT_ID_FIELD_NUMBER = 2
     final val CLIENT_SECRET_FIELD_NUMBER = 3
     final val BUTTON_IMAGE_URL_FIELD_NUMBER = 4
@@ -1079,11 +1052,10 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
     final val OIDC_DISCOVERY_URL_FIELD_NUMBER = 7
     final val MFA_FIELD_NUMBER = 8
     final val TYPE_FIELD_NUMBER = 9
-    final val ID_FIELD_NUMBER = 10
-    final val SCOPES_FIELD_NUMBER = 11
-    final val PURPOSE_FIELD_NUMBER = 12
+    final val SCOPES_FIELD_NUMBER = 10
+    final val PURPOSE_FIELD_NUMBER = 11
     def of(
-      name: _root_.scala.Predef.String,
+      id: _root_.scala.Predef.String,
       clientId: _root_.scala.Predef.String,
       clientSecret: _root_.scala.Predef.String,
       buttonImageUrl: _root_.scala.Predef.String,
@@ -1091,11 +1063,10 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       oidcDiscoveryUrl: _root_.scala.Predef.String,
       mfa: _root_.scala.Seq[_root_.scala.Predef.String],
       `type`: dev.auth3.identity.admin.admin.GetConnectionsResponse.Types,
-      id: _root_.scala.Predef.String,
       scopes: _root_.scala.Predef.String,
       purpose: dev.auth3.identity.admin.admin.GetConnectionsResponse.Purposes
     ): _root_.dev.auth3.identity.admin.admin.GetConnectionsResponse.Connection = _root_.dev.auth3.identity.admin.admin.GetConnectionsResponse.Connection(
-      name,
+      id,
       clientId,
       clientSecret,
       buttonImageUrl,
@@ -1103,7 +1074,6 @@ object GetConnectionsResponse extends scalapb.GeneratedMessageCompanion[dev.auth
       oidcDiscoveryUrl,
       mfa,
       `type`,
-      id,
       scopes,
       purpose
     )

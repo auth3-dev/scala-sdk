@@ -6,10 +6,10 @@
 package dev.auth3.identity.admin.admin
 
 @SerialVersionUID(0L)
-final case class GetTraitsRequest(
+final case class GetProfileRequest(
     identityId: _root_.scala.Predef.String = "",
     unknownFields: _root_.scalapb.UnknownFieldSet = _root_.scalapb.UnknownFieldSet.empty
-    ) extends scalapb.GeneratedMessage with scalapb.lenses.Updatable[GetTraitsRequest] {
+    ) extends scalapb.GeneratedMessage with scalapb.lenses.Updatable[GetProfileRequest] {
     @transient
     private[this] var __serializedSizeMemoized: _root_.scala.Int = 0
     private[this] def __computeSerializedSize(): _root_.scala.Int = {
@@ -42,7 +42,7 @@ final case class GetTraitsRequest(
       };
       unknownFields.writeTo(_output__)
     }
-    def withIdentityId(__v: _root_.scala.Predef.String): GetTraitsRequest = copy(identityId = __v)
+    def withIdentityId(__v: _root_.scala.Predef.String): GetProfileRequest = copy(identityId = __v)
     def withUnknownFields(__v: _root_.scalapb.UnknownFieldSet) = copy(unknownFields = __v)
     def discardUnknownFields = copy(unknownFields = _root_.scalapb.UnknownFieldSet.empty)
     def getFieldByNumber(__fieldNumber: _root_.scala.Int): _root_.scala.Any = {
@@ -60,13 +60,13 @@ final case class GetTraitsRequest(
       }
     }
     def toProtoString: _root_.scala.Predef.String = _root_.scalapb.TextFormat.printToUnicodeString(this)
-    def companion: dev.auth3.identity.admin.admin.GetTraitsRequest.type = dev.auth3.identity.admin.admin.GetTraitsRequest
-    // @@protoc_insertion_point(GeneratedMessage[depot.devtools.auth.v0.identity.admin.GetTraitsRequest])
+    def companion: dev.auth3.identity.admin.admin.GetProfileRequest.type = dev.auth3.identity.admin.admin.GetProfileRequest
+    // @@protoc_insertion_point(GeneratedMessage[depot.devtools.auth.v0.identity.admin.GetProfileRequest])
 }
 
-object GetTraitsRequest extends scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetTraitsRequest] {
-  implicit def messageCompanion: scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetTraitsRequest] = this
-  def parseFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): dev.auth3.identity.admin.admin.GetTraitsRequest = {
+object GetProfileRequest extends scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetProfileRequest] {
+  implicit def messageCompanion: scalapb.GeneratedMessageCompanion[dev.auth3.identity.admin.admin.GetProfileRequest] = this
+  def parseFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): dev.auth3.identity.admin.admin.GetProfileRequest = {
     var __identityId: _root_.scala.Predef.String = ""
     var `_unknownFields__`: _root_.scalapb.UnknownFieldSet.Builder = null
     var _done__ = false
@@ -83,15 +83,15 @@ object GetTraitsRequest extends scalapb.GeneratedMessageCompanion[dev.auth3.iden
           _unknownFields__.parseField(tag, _input__)
       }
     }
-    dev.auth3.identity.admin.admin.GetTraitsRequest(
+    dev.auth3.identity.admin.admin.GetProfileRequest(
         identityId = __identityId,
         unknownFields = if (_unknownFields__ == null) _root_.scalapb.UnknownFieldSet.empty else _unknownFields__.result()
     )
   }
-  implicit def messageReads: _root_.scalapb.descriptors.Reads[dev.auth3.identity.admin.admin.GetTraitsRequest] = _root_.scalapb.descriptors.Reads{
+  implicit def messageReads: _root_.scalapb.descriptors.Reads[dev.auth3.identity.admin.admin.GetProfileRequest] = _root_.scalapb.descriptors.Reads{
     case _root_.scalapb.descriptors.PMessage(__fieldsMap) =>
       _root_.scala.Predef.require(__fieldsMap.keys.forall(_.containingMessage eq scalaDescriptor), "FieldDescriptor does not match message type.")
-      dev.auth3.identity.admin.admin.GetTraitsRequest(
+      dev.auth3.identity.admin.admin.GetProfileRequest(
         identityId = __fieldsMap.get(scalaDescriptor.findFieldByNumber(1).get).map(_.as[_root_.scala.Predef.String]).getOrElse("")
       )
     case _ => throw new RuntimeException("Expected PMessage")
@@ -101,17 +101,17 @@ object GetTraitsRequest extends scalapb.GeneratedMessageCompanion[dev.auth3.iden
   def messageCompanionForFieldNumber(__number: _root_.scala.Int): _root_.scalapb.GeneratedMessageCompanion[_] = throw new MatchError(__number)
   lazy val nestedMessagesCompanions: Seq[_root_.scalapb.GeneratedMessageCompanion[_ <: _root_.scalapb.GeneratedMessage]] = Seq.empty
   def enumCompanionForFieldNumber(__fieldNumber: _root_.scala.Int): _root_.scalapb.GeneratedEnumCompanion[_] = throw new MatchError(__fieldNumber)
-  lazy val defaultInstance = dev.auth3.identity.admin.admin.GetTraitsRequest(
+  lazy val defaultInstance = dev.auth3.identity.admin.admin.GetProfileRequest(
     identityId = ""
   )
-  implicit class GetTraitsRequestLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.GetTraitsRequest]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, dev.auth3.identity.admin.admin.GetTraitsRequest](_l) {
+  implicit class GetProfileRequestLens[UpperPB](_l: _root_.scalapb.lenses.Lens[UpperPB, dev.auth3.identity.admin.admin.GetProfileRequest]) extends _root_.scalapb.lenses.ObjectLens[UpperPB, dev.auth3.identity.admin.admin.GetProfileRequest](_l) {
     def identityId: _root_.scalapb.lenses.Lens[UpperPB, _root_.scala.Predef.String] = field(_.identityId)((c_, f_) => c_.copy(identityId = f_))
   }
   final val IDENTITY_ID_FIELD_NUMBER = 1
   def of(
     identityId: _root_.scala.Predef.String
-  ): _root_.dev.auth3.identity.admin.admin.GetTraitsRequest = _root_.dev.auth3.identity.admin.admin.GetTraitsRequest(
+  ): _root_.dev.auth3.identity.admin.admin.GetProfileRequest = _root_.dev.auth3.identity.admin.admin.GetProfileRequest(
     identityId
   )
-  // @@protoc_insertion_point(GeneratedMessageCompanion[depot.devtools.auth.v0.identity.admin.GetTraitsRequest])
+  // @@protoc_insertion_point(GeneratedMessageCompanion[depot.devtools.auth.v0.identity.admin.GetProfileRequest])
 }
